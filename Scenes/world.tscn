@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://ivmu8yyt4ie6" path="res://Scripts/player_manager.gd" id="1_a02cp"]
 [ext_resource type="Script" uid="uid://cme6eyojarpfx" path="res://Scripts/world_manager.gd" id="1_go701"]
 [ext_resource type="Script" uid="uid://dcmixv1so768n" path="res://Scripts/Configs/singals_config.gd" id="2_5a7ea"]
+[ext_resource type="PackedScene" uid="uid://ba2j1egojk0vi" path="res://Scenes/signal_template.tscn" id="3_8j60k"]
 
 [sub_resource type="Resource" id="Resource_5a7ea"]
 script = ExtResource("2_5a7ea")
+signals_scene = ExtResource("3_8j60k")
 metadata/_custom_type_script = "uid://dcmixv1so768n"
 
 [node name="World" type="Node2D" unique_id=1719440579]
