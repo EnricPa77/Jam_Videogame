@@ -5,34 +5,43 @@
 [ext_resource type="Script" uid="uid://caas1iudoynbi" path="res://Scenes/stop_area.gd" id="3_hsho4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7hxs"]
-size = Vector2(13, 55)
+size = Vector2(4.875, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3iwoq"]
-size = Vector2(12, 14)
+size = Vector2(16, 15)
 
 [node name="Light" type="Node2D" unique_id=738770112]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_wh1uv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1955720034]
 texture_filter = 1
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_aw42n")
 
 [node name="StopArea" type="Area2D" parent="." unique_id=2121734399]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("3_hsho4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StopArea" unique_id=1569858416]
-position = Vector2(-16.5, -20.5)
+position = Vector2(-16, -28.444445)
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_i7hxs")
 
 [node name="LightArea" type="Area2D" parent="." unique_id=1072184064]
+scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LightArea" unique_id=31854101]
+position = Vector2(0, 0.5)
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_3iwoq")
 
 [node name="ColorDown" type="Polygon2D" parent="." unique_id=1568396468]
-polygon = PackedVector2Array(-5, 1, 6, 1, 6, 4, 4, 6, -3, 6, -5, 4)
+scale = Vector2(1.5, 1.5)
+polygon = PackedVector2Array(-7, 2, 7, 2, 7, 7, -7, 7)
 
 [node name="ColorUp" type="Polygon2D" parent="." unique_id=1193923439]
-polygon = PackedVector2Array(-5, -1, -5, -4, -3, -6, 4, -6, 6, -4, 6, -1)
+scale = Vector2(1.5, 1.5)
+polygon = PackedVector2Array(-7, 0, -7, -5, 7, -5, 7, 0)
 
 [connection signal="input_event" from="LightArea" to="." method="_on_light_area_input_event"]
