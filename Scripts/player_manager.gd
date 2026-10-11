@@ -15,8 +15,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
-		if event.position.x >= 0 and event.position.x <= 300 and event.position.y >= 348 and event.position.y <= 648:
-			print(event.position)
+		pass
 
 
 
