@@ -1,3 +1,3 @@
-class_name SingalsConfig extends Resource
+class_name SignalsConfig extends Resource
 
 @export var signals_scene: PackedScene
