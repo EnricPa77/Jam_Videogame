@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://b8tmd5xppk8x6"]
 
-[node name="world" type="Node2D" unique_id=1719440579]
+[ext_resource type="Script" uid="uid://ivmu8yyt4ie6" path="res://Scripts/player_manager.gd" id="1_a02cp"]
+[ext_resource type="Script" uid="uid://cme6eyojarpfx" path="res://Scripts/world_manager.gd" id="1_go701"]
+[ext_resource type="Script" uid="uid://dcmixv1so768n" path="res://Scripts/Configs/singals_config.gd" id="2_5a7ea"]
+
+[sub_resource type="Resource" id="Resource_5a7ea"]
+script = ExtResource("2_5a7ea")
+metadata/_custom_type_script = "uid://dcmixv1so768n"
+
+[node name="World" type="Node2D" unique_id=1719440579]
+script = ExtResource("1_go701")
+signals_config = Array[ExtResource("2_5a7ea")]([SubResource("Resource_5a7ea")])
+
+[node name="PlayerManager" type="Node2D" parent="." unique_id=596113044]
+script = ExtResource("1_a02cp")
