@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://bdlikyeldyym1"]
 
 [ext_resource type="Texture2D" uid="uid://cwks3bx4sm7q0" path="res://Assets/Signal/signal.png" id="1_aw42n"]
-[ext_resource type="Script" uid="uid://dtv51wwii7u1r" path="res://Scripts/light.gd" id="1_wh1uv"]
-[ext_resource type="Script" uid="uid://caas1iudoynbi" path="res://Scenes/stop_area.gd" id="3_hsho4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7hxs"]
-size = Vector2(4.875, 38)
+[ext_resource type="Script" uid="uid://dtv51wwii7u1r" path="res://Scripts/Objects/Light/light.gd" id="1_wh1uv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3iwoq"]
 size = Vector2(16, 15)
@@ -18,15 +14,6 @@ script = ExtResource("1_wh1uv")
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_aw42n")
-
-[node name="StopArea" type="Area2D" parent="." unique_id=2121734399]
-scale = Vector2(1.5, 1.5)
-script = ExtResource("3_hsho4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StopArea" unique_id=1569858416]
-position = Vector2(-16, -28.444445)
-scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_i7hxs")
 
 [node name="LightArea" type="Area2D" parent="." unique_id=1072184064]
 scale = Vector2(1.5, 1.5)
@@ -44,4 +31,8 @@ polygon = PackedVector2Array(-7, 2, 7, 2, 7, 7, -7, 7)
 scale = Vector2(1.5, 1.5)
 polygon = PackedVector2Array(-7, 0, -7, -5, 7, -5, 7, 0)
 
+[node name="Timer" type="Timer" parent="." unique_id=239450989]
+wait_time = 0.05
+
 [connection signal="input_event" from="LightArea" to="." method="_on_light_area_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
