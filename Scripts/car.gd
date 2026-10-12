@@ -21,6 +21,7 @@ const speed_modifier: float = 100
 var anger: float = 0
 var stopped: bool
 var berserk: bool
+var direction: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,9 +31,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not stopped:
-		position.x += speed * delta
+		position += direction * speed * delta
 	update_angryness(delta)
-	print(anger)
 
 
 func update_angryness(delta: float) -> void:
