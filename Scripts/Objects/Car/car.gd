@@ -19,6 +19,7 @@ const MAX_ANGER: float = 100
 const speed_modifier: float = 100
 
 var anger: float = 0
+var calmness: bool = false
 var stopped: bool
 var berserk: bool
 var direction: Vector2
@@ -51,7 +52,7 @@ func update_angryness(delta: float) -> void:
 		if anger == MAX_ANGER:
 			berserk = true
 
-	elif not berserk:
+	elif not berserk and calmness:
 		anger = maxf(
 			anger - delta * anger_speed_decrease,
 			0.0
