@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cwks3bx4sm7q0" path="res://Assets/Signal/signal.png" id="1_aw42n"]
 [ext_resource type="Script" uid="uid://dtv51wwii7u1r" path="res://Scripts/light.gd" id="1_wh1uv"]
-[ext_resource type="Script" uid="uid://caas1iudoynbi" path="res://Scenes/stop_area.gd" id="3_hsho4"]
+[ext_resource type="Script" uid="uid://caas1iudoynbi" path="res://Scripts/stop_area.gd" id="3_hsho4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7hxs"]
 size = Vector2(4.875, 38)
