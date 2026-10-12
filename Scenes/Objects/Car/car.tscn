@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://ddilb2t3xhd6p"]
 
-[ext_resource type="Script" uid="uid://bemjd3s3a1d52" path="res://Scripts/car.gd" id="1_go66d"]
+[ext_resource type="Script" uid="uid://bemjd3s3a1d52" path="res://Scripts/Objects/Car/car.gd" id="1_go66d"]
 [ext_resource type="Texture2D" uid="uid://c01dnpcf16bea" path="res://Assets/Car/car.png" id="1_wqo35"]
-[ext_resource type="Script" uid="uid://b2md2jxblb2x0" path="res://Scripts/hitbox_ahead.gd" id="3_1sfmx"]
+[ext_resource type="Script" uid="uid://1nfx7rg5kjiy" path="res://Scripts/Objects/Car/hitbox_car.gd" id="2_yi23e"]
+[ext_resource type="Script" uid="uid://b2md2jxblb2x0" path="res://Scripts/Objects/Car/hitbox_ahead.gd" id="3_1sfmx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ih278"]
 size = Vector2(24, 42)
@@ -17,6 +18,7 @@ script = ExtResource("1_go66d")
 polygon = PackedVector2Array(-11, -14, -11, 12, -11, 21, -10, 21, -10, 22, -9, 22, -9, 23, -8, 23, -8, 24, 8, 24, 8, 23, 9, 23, 9, 22, 10, 22, 10, 21, 11, 21, 11.000002, 12.046197, 11, -14, 10, -14, 10, -15, 9, -15, 9, -16, -9, -16, -9, -15, -10, -15, -10, -14)
 
 [node name="HitboxCar" type="Area2D" parent="." unique_id=1128221460]
+script = ExtResource("2_yi23e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxCar" unique_id=714975495]
 position = Vector2(0, 4)
@@ -26,10 +28,10 @@ shape = SubResource("RectangleShape2D_ih278")
 texture_filter = 1
 texture = ExtResource("1_wqo35")
 
-[node name="HitboxAhead" type="Area2D" parent="." unique_id=501297025]
+[node name="HitboxCheckerCar" type="Area2D" parent="." unique_id=501297025]
 script = ExtResource("3_1sfmx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxAhead" unique_id=343467288]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxCheckerCar" unique_id=343467288]
 position = Vector2(0, 31)
 shape = SubResource("RectangleShape2D_i7hxs")
 

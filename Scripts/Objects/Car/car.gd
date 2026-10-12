@@ -69,7 +69,7 @@ func update_angryness(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent() is Car:
+	if area is HitboxCar:
 		print("Me he estrellado chat")
 
 
