@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cioqg2hjktxbq" path="res://Assets/Tiles/v_road_tile.png" id="8_ikia7"]
 [ext_resource type="PackedScene" uid="uid://d3mklci72totw" path="res://Scenes/Objects/Light/light_stop_area.tscn" id="9_7yui6"]
 [ext_resource type="Texture2D" uid="uid://cnh7pdwkrj4qn" path="res://Assets/Decoration/big_tree.png" id="10_0fj1v"]
+[ext_resource type="PackedScene" uid="uid://dxvsa2wobjdr5" path="res://Scenes/Objects/RadioWaves/radio_wave.tscn" id="14_e0ngr"]
 
 [sub_resource type="Gradient" id="Gradient_5v1tr"]
 offsets = PackedFloat32Array(0.19277108, 0.9096386)
@@ -189,3 +190,6 @@ position = Vector2(336, 327)
 
 [node name="StopArea" parent="Light" unique_id=1787539644 instance=ExtResource("9_7yui6")]
 position = Vector2(-28, -50)
+
+[node name="RadioWave" parent="." unique_id=1313023075 instance=ExtResource("14_e0ngr")]
+position = Vector2(587, 251)
