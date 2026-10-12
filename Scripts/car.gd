@@ -1,18 +1,26 @@
 class_name Car extends Node2D
 
+##Mide qué tan rápido va el coche. Cuanto mayor sea, mayor es su velocidad.
 @export var speed: float 
-@export var anger_speed: float
+##Mide qué tan rápido se enfada el coche. Cuanto mayor sea más rapido se enfada.
+@export var anger_speed_increase: float
+##Mide qué tan rápido se desenfada el coche. Cuanto mayor sea más rapido se enfada.
+@export var anger_speed_decrease: float
+##Mide qué tan rápido el coche pilla aceleración y frena al enfadarse. Cuanto menor sea más rápido acelera y más rapido frena.
 @export var anger_speed_car: float
+##Mide la velocidad máxima del coche al enfadarse
 @export var anger_max_speed: float
 
 @onready var polygon: Polygon2D = $Polygon2D
 @onready var original_speed: float = speed
+@onready var previous_speed: float = speed
 
 const MAX_ANGER: float = 100
+const speed_modifier: float = 100
 
 var anger: float = 0
-var previous_speed: float
 var stopped: bool
+var berserk: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,29 +29,55 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(speed)
 	if not stopped:
 		position.x += speed * delta
 	update_angryness(delta)
-	
+	print(anger)
+
+
 func update_angryness(delta: float) -> void:
 	if stopped:
-		if anger <= MAX_ANGER:
-			anger += delta * anger_speed
-		if previous_speed < anger_max_speed:
-			previous_speed += anger / anger_speed_car
-	print(anger)
+		anger = minf(
+			anger + delta * anger_speed_increase,
+			MAX_ANGER
+		)
+
+		previous_speed = minf(
+			previous_speed + (speed_modifier / anger_speed_car) * delta,
+			anger_max_speed
+		)
+		speed = 0
+		
+		if anger == MAX_ANGER:
+			berserk = true
+
+	elif not berserk:
+		anger = maxf(
+			anger - delta * anger_speed_decrease,
+			0.0
+		)
+
+		previous_speed = maxf(
+			previous_speed - (speed_modifier / anger_speed_car) * delta,
+			original_speed
+		)
+		
+		speed = previous_speed
+
 	var target_color: Color = Color(1.0, 1.0 - anger/100, 1.0 - anger/100)
 	polygon.color = target_color
+
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Car:
 		print("Me he estrellado chat")
 
+
 func stop() -> void:
-	speed = 0
 	stopped = true
-	
+
+
 func go() -> void:
 	stopped = false
-	speed = original_speed + previous_speed
+	speed = previous_speed
+	
