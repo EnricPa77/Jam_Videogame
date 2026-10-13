@@ -2,9 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bdlikyeldyym1" path="res://Scenes/Objects/Light/light.tscn" id="3_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://b24d70d1buyog" path="res://Scenes/Objects/Spawner/spawner.tscn" id="4_0fj1v"]
-[ext_resource type="PackedScene" uid="uid://ddilb2t3xhd6p" path="res://Scenes/Objects/Car/car.tscn" id="4_5v1tr"]
 [ext_resource type="Texture2D" uid="uid://bh4gbtancdnue" path="res://Assets/Decoration/big_house.png" id="5_7yui6"]
-[ext_resource type="Script" uid="uid://ciiitacngdrol" path="res://Scripts/Configs/car_config.gd" id="5_ikia7"]
 [ext_resource type="Texture2D" uid="uid://djk763viu5anx" path="res://Assets/Tiles/c_road_tile.png" id="5_k7acu"]
 [ext_resource type="Texture2D" uid="uid://2b3xtbdodep4" path="res://Assets/Tiles/h_road_tile.png" id="6_5v1tr"]
 [ext_resource type="Texture2D" uid="uid://cqjy17lsnp20w" path="res://Assets/Tiles/background.png" id="7_0fj1v"]
@@ -14,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://d3mklci72totw" path="res://Scenes/Objects/Light/light_stop_area.tscn" id="9_7yui6"]
 [ext_resource type="Texture2D" uid="uid://cnh7pdwkrj4qn" path="res://Assets/Decoration/big_tree.png" id="10_0fj1v"]
 [ext_resource type="PackedScene" uid="uid://dxvsa2wobjdr5" path="res://Scenes/Objects/RadioWaves/radio_wave.tscn" id="14_e0ngr"]
+[ext_resource type="PackedScene" uid="uid://bkkjw2co0f6nl" path="res://Scenes/Objects/Clock/clock.tscn" id="15_kn0ld"]
 
 [sub_resource type="Gradient" id="Gradient_5v1tr"]
 offsets = PackedFloat32Array(0.19277108, 0.9096386)
@@ -143,15 +142,6 @@ sources/1 = SubResource("TileSetAtlasSource_e0ngr")
 sources/2 = SubResource("TileSetAtlasSource_kn0ld")
 sources/3 = SubResource("TileSetAtlasSource_hgpy0")
 
-[sub_resource type="Resource" id="Resource_0fj1v"]
-script = ExtResource("5_ikia7")
-speed = 20.0
-anger_speed_increase = 10.0
-anger_speed_decrease = 10.0
-anger_speed_car = 10.0
-anger_max_speed = 100.0
-metadata/_custom_type_script = "uid://ciiitacngdrol"
-
 [node name="World" type="Node2D" unique_id=1719440579]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1071142618]
@@ -178,13 +168,6 @@ texture_filter = 1
 tile_map_data = PackedByteArray("AAAbABUAAAABAAEAAAAbABYAAAABAAIAAAAcABUAAAACAAEAAAAcABYAAAACAAIAAAAdABUAAAADAAEAAAAdABYAAAADAAIAAAAeAAwAAAABAAEAAAAeAA0AAAABAAIAAAAfAAwAAAACAAEAAAAfAA0AAAACAAIAAAAgAAwAAAADAAEAAAAgAA0AAAADAAIAAAAaAAcAAAABAAEAAAAaAAgAAAABAAIAAAAbAAcAAAACAAEAAAAbAAgAAAACAAIAAAAcAAcAAAADAAEAAAAcAAgAAAADAAIAAAAhAAgAAAABAAEAAAAhAAkAAAABAAIAAAAiAAgAAAACAAEAAAAiAAkAAAACAAIAAAAjAAgAAAADAAEAAAAjAAkAAAADAAIAAAAeABoAAQABAAEAAAAeABsAAQABAAIAAAAfABoAAQACAAEAAAAfABsAAQACAAIAAAAiABYAAQABAAEAAAAiABcAAQABAAIAAAAjABYAAQACAAEAAAAjABcAAQACAAIAAAAbAA0AAQABAAEAAAAbAA4AAQABAAIAAAAcAA0AAQACAAEAAAAcAA4AAQACAAIAAAAqAA0AAQABAAEAAAAqAA4AAQABAAIAAAArAA0AAQACAAEAAAArAA4AAQACAAIAAAAwAA4AAQABAAEAAAAwAA8AAQABAAIAAAAxAA4AAQACAAEAAAAxAA8AAQACAAIAAAAtAAYAAQABAAEAAAAtAAcAAQABAAIAAAAuAAYAAQACAAEAAAAuAAcAAQACAAIAAAAqAAkAAAABAAEAAAAqAAoAAAABAAIAAAArAAkAAAACAAEAAAArAAoAAAACAAIAAAAsAAkAAAADAAEAAAAsAAoAAAADAAIAAAArABUAAAABAAEAAAArABYAAAABAAIAAAAsABUAAAACAAEAAAAsABYAAAACAAIAAAAtABUAAAADAAEAAAAtABYAAAADAAIAAAAvABsAAAABAAEAAAAvABwAAAABAAIAAAAwABsAAAACAAEAAAAwABwAAAACAAIAAAAxABsAAAADAAEAAAAxABwAAAADAAIAAAAqABwAAQABAAEAAAAqAB0AAQABAAIAAAArABwAAQACAAEAAAArAB0AAQACAAIAAAAvABcAAQABAAEAAAAvABgAAQABAAIAAAAwABcAAQACAAEAAAAwABgAAQACAAIAAAANABYAAQABAAEAAAANABcAAQABAAIAAAAOABYAAQACAAEAAAAOABcAAQACAAIAAAATABoAAQABAAEAAAATABsAAQABAAIAAAAUABoAAQACAAEAAAAUABsAAQACAAIAAAAdAAkAAwABAAEAAAAdAAoAAwABAAIAAAAeAAkAAwACAAEAAAAeAAoAAwACAAIAAAAfABQAAgABAAEAAAAfABUAAgABAAIAAAAgABQAAgACAAEAAAAgABUAAgACAAIAAAAbAAoAAgABAAEAAAAbAAsAAgABAAIAAAAcAAoAAgACAAEAAAAcAAsAAgACAAIAAAAuAAsAAgABAAEAAAAuAAwAAgABAAIAAAAvAAsAAgACAAEAAAAvAAwAAgACAAIAAAAvABQAAgABAAEAAAAvABUAAgABAAIAAAAwABQAAgACAAEAAAAwABUAAgACAAIAAAAqABkAAgABAAEAAAAqABoAAgABAAIAAAArABkAAgACAAEAAAArABoAAgACAAIAAAAbABoAAgABAAEAAAAbABsAAgABAAIAAAAcABoAAgACAAEAAAAcABsAAgACAAIAAAAPAA0AAgABAAEAAAAPAA4AAgABAAIAAAAQAA0AAgACAAEAAAAQAA4AAgACAAIAAAAUAAsAAQABAAEAAAAUAAwAAQABAAIAAAAVAAsAAQACAAEAAAAVAAwAAQACAAIAAAAMAAoAAQABAAEAAAAMAAsAAQABAAIAAAANAAoAAQACAAEAAAANAAsAAQACAAIAAAATAA4AAwABAAEAAAATAA8AAwABAAIAAAAUAA4AAwACAAEAAAAUAA8AAwACAAIAAAALAA4AAwABAAEAAAALAA8AAwABAAIAAAAMAA4AAwACAAEAAAAMAA8AAwACAAIAAAAfABcAAwABAAEAAAAfABgAAwABAAIAAAAgABcAAwACAAEAAAAgABgAAwACAAIAAAAjABoAAwABAAEAAAAjABsAAwABAAIAAAAkABoAAwACAAEAAAAkABsAAwACAAIAAAApABQAAwABAAEAAAApABUAAwABAAIAAAAqABQAAwACAAEAAAAqABUAAwACAAIAAAAQABQAAwABAAEAAAAQABUAAwABAAIAAAARABQAAwACAAEAAAARABUAAwACAAIAAAARABkAAwABAAEAAAARABoAAwABAAIAAAASABkAAwACAAEAAAASABoAAwACAAIAAAAtABkAAwABAAEAAAAtABoAAwABAAIAAAAuABkAAwACAAEAAAAuABoAAwACAAIAAAA=")
 tile_set = SubResource("TileSet_ih278")
 
-[node name="Spawner" parent="." unique_id=1155867531 instance=ExtResource("4_0fj1v")]
-position = Vector2(96, 288)
-spawn_position = 3
-car_packed_scene = ExtResource("4_5v1tr")
-car_config = SubResource("Resource_0fj1v")
-spawn_cooldown = 5.0
-
 [node name="Light" parent="." unique_id=738770112 instance=ExtResource("3_5v1tr")]
 position = Vector2(336, 327)
 
@@ -193,3 +176,8 @@ position = Vector2(-28, -50)
 
 [node name="RadioWave" parent="." unique_id=1313023075 instance=ExtResource("14_e0ngr")]
 position = Vector2(587, 251)
+
+[node name="Clock" parent="." unique_id=436101982 instance=ExtResource("15_kn0ld")]
+
+[node name="Spawner" parent="." unique_id=1155867531 instance=ExtResource("4_0fj1v")]
+position = Vector2(96, 288)
