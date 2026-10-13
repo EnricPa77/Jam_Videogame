@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bsimfxk32f01n"]
+
+[ext_resource type="FontFile" uid="uid://153c7ihbwso" path="res://Assets/Fonts/Silkscreen-Bold.ttf" id="1_4hf0m"]
+[ext_resource type="Script" uid="uid://be2q6wt8cx1wc" path="res://Scripts/UI/main_menu_button.gd" id="2_hc27y"]
+
+[node name="Button" type="Button" unique_id=1937142157]
+texture_filter = 1
+custom_minimum_size = Vector2(250, 46)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_4hf0m")
+theme_override_font_sizes/font_size = 30
+text = "PLAY"
+script = ExtResource("2_hc27y")
