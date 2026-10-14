@@ -10,10 +10,11 @@ var cooldown_ready: bool
 var stop: bool
 
 func _ready() -> void:
-	timer.wait_time = light_cooldown
-	timer.start()
-	change_color()
-	cooldown_ready = true
+	if light_cooldown > 0:
+		timer.wait_time = light_cooldown
+		timer.start()
+		change_color()
+		cooldown_ready = true
 
 func _on_light_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("click") and (cooldown_ready):
