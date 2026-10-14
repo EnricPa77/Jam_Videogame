@@ -9,7 +9,6 @@ var spawn_position: Array[SpawnerConfig.SpawnPosition]
 var spawn_cooldown: Array[float]
 var car_packed_scene: Array[PackedScene]
 var car_config: Array[CarConfig]
-var timer_configured: bool
 
 enum SpawnPosition {
 	UP,
@@ -30,25 +29,12 @@ func _ready() -> void:
 		car_packed_scene.append(spawner.car_packed_scene)
 		car_config.append(spawner.car_config)
 		spawn_cooldown.append(spawner.spawn_cooldown)
-<<<<<<< Updated upstream
 	
 	var spawner_config: SpawnerConfig = get_current_configuration(clock.current_time)
 	if spawner_config != null:
 		timer.wait_time = spawner_config.spawn_cooldown
 		timer.start()
 
-=======
-		
-
-func _process(delta: float) -> void:
-	if (not timer_configured) and (clock != null):
-		var spawner_config: SpawnerConfig = get_current_configuration(clock.current_time)
-		print(clock.current_time)
-		if spawner_config != null:
-			timer.wait_time = spawner_config.spawn_cooldown
-			timer.start()
-			timer_configured = true
->>>>>>> Stashed changes
 
 func _on_timer_timeout() -> void:
 	var spawner_config: SpawnerConfig

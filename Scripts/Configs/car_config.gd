@@ -9,8 +9,4 @@ class_name CarConfig extends Resource
 ##Mide qué tan rápido el coche pilla aceleración y frena al enfadarse. Cuanto menor sea más rápido acelera y más rapido frena.
 @export var anger_speed_car: float
 ##Mide la velocidad máxima del coche al enfadarse
-<<<<<<< Updated upstream
 @export var anger_max_speed: float
-=======
-@export var anger_max_speed: float = 80
->>>>>>> Stashed changes
