@@ -15,7 +15,7 @@ func _ready():
 
 func _on_timer_timeout() -> void:
 	if time_start < time_ends:
-		time_start += 5
+		time_start += 10
 		update_time()
 	
 func update_time() -> void:

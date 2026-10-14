@@ -29,28 +29,31 @@ func _ready() -> void:
 		car_packed_scene.append(spawner.car_packed_scene)
 		car_config.append(spawner.car_config)
 		spawn_cooldown.append(spawner.spawn_cooldown)
-	
-	var spawner_config: SpawnerConfig = get_current_configuration(clock.current_time)
-	if spawner_config != null:
-		timer.wait_time = spawner_config.spawn_cooldown
-		timer.start()
+		
+
+	timer.wait_time = 1.0
+	timer.start()
 
 
 func _on_timer_timeout() -> void:
-	var spawner_config: SpawnerConfig
+	if clock == null:
+		return
 	
-	if clock != null:
-		spawner_config = get_current_configuration(clock.current_time)
+	var spawner_config: SpawnerConfig = get_current_configuration(clock.current_time)
 	
-	if spawner_config != null:
-		var car: Car = spawner_config.car_packed_scene.instantiate()
+	if spawner_config == null:
+		return
 	
-		configurate_car_stats(car, spawner_config)
-		
-		manage_direction(car, spawner_config)
-		
-		get_tree().current_scene.add_child(car)
-		car.global_position = global_position
+	var car: Car = spawner_config.car_packed_scene.instantiate()
+
+	configurate_car_stats(car, spawner_config)
+	
+	manage_direction(car, spawner_config)
+	
+	get_tree().current_scene.add_child(car)
+	car.global_position = global_position
+	
+	timer.wait_time = spawner_config.spawn_cooldown
 	
 func manage_direction(car: Car, spawner_config: SpawnerConfig) -> void:
 	if (car != null) and (spawner_config != null):
@@ -70,11 +73,11 @@ func manage_direction(car: Car, spawner_config: SpawnerConfig) -> void:
 			
 func configurate_car_stats(car: Car, spawner_config: SpawnerConfig) -> void:
 	if (car != null) and (spawner_config != null):
-		car.speed = spawner_config.speed
-		car.anger_speed_increase = spawner_config.anger_speed_increase
-		car.anger_speed_decrease = spawner_config.anger_speed_decrease
-		car.anger_speed_car = spawner_config.anger_speed_car
-		car.anger_max_speed = spawner_config.anger_max_speed
+		car.speed = spawner_config.car_config.speed
+		car.anger_speed_increase = spawner_config.car_config.anger_speed_increase
+		car.anger_speed_decrease = spawner_config.car_config.anger_speed_decrease
+		car.anger_speed_car = spawner_config.car_config.anger_speed_car
+		car.anger_max_speed = spawner_config.car_config.anger_max_speed
 
 func get_current_configuration(current_time: int) -> SpawnerConfig:
 	for spawner in spawner_config:
