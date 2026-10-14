@@ -35,7 +35,6 @@ func _process(delta: float) -> void:
 		position += direction * speed * delta
 	update_angryness(delta)
 
-
 func update_angryness(delta: float) -> void:
 	if stopped:
 		anger = minf(

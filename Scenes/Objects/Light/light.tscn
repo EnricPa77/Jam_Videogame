@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dtv51wwii7u1r" path="res://Scripts/Objects/Light/light.gd" id="1_wh1uv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3iwoq"]
-size = Vector2(4.740741, 7.1111116)
+size = Vector2(6.8148155, 9.777778)
 
 [node name="Light" type="Node2D" unique_id=738770112]
 scale = Vector2(1.5, 1.5)
@@ -19,8 +19,7 @@ texture = ExtResource("1_aw42n")
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LightArea" unique_id=31854101]
-visible = false
-position = Vector2(0.44444466, -2.1192763e-07)
+position = Vector2(0.6666668, -0.22222191)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_3iwoq")
 

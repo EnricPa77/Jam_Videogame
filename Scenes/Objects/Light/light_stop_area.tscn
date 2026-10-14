@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://caas1iudoynbi" path="res://Scripts/Objects/Light/light_stop_area.gd" id="1_vaxnf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7hxs"]
-size = Vector2(7.999999, 120.66667)
+size = Vector2(2, 24)
 
 [node name="StopArea" type="Area2D" unique_id=1787539644]
 script = ExtResource("1_vaxnf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2056163199]
-position = Vector2(0, -1)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_i7hxs")

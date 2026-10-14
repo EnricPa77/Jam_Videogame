@@ -23,7 +23,7 @@ func _ready() -> void:
 	
 	if world.has_node("Clock"):
 		clock = world.get_node_or_null("Clock") as Clock
-		
+		print(clock.current_time)
 	for spawner in spawner_config:
 		spawn_position.append(spawner.spawn_position)
 		car_packed_scene.append(spawner.car_packed_scene)
@@ -70,11 +70,11 @@ func manage_direction(car: Car, spawner_config: SpawnerConfig) -> void:
 			
 func configurate_car_stats(car: Car, spawner_config: SpawnerConfig) -> void:
 	if (car != null) and (spawner_config != null):
-		car.speed = spawner_config.speed
-		car.anger_speed_increase = spawner_config.anger_speed_increase
-		car.anger_speed_decrease = spawner_config.anger_speed_decrease
-		car.anger_speed_car = spawner_config.anger_speed_car
-		car.anger_max_speed = spawner_config.anger_max_speed
+		car.speed = spawner_config.car_config.speed
+		car.anger_speed_increase = spawner_config.car_config.speed
+		car.anger_speed_decrease = spawner_config.car_config.speed
+		car.anger_speed_car = spawner_config.car_config.speed
+		car.anger_max_speed = spawner_config.car_config.speed
 
 func get_current_configuration(current_time: int) -> SpawnerConfig:
 	for spawner in spawner_config:
