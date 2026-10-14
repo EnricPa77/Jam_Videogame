@@ -10,19 +10,18 @@ class_name Car extends Node2D
 @export var anger_speed_car: float
 ##Mide la velocidad máxima del coche al enfadarse
 @export var anger_max_speed: float
+##Mide a que dirección tiene que ir el coche
+@export var direction: Vector2
 
 @onready var polygon: Polygon2D = $Polygon2D
 @onready var original_speed: float = speed
-@onready var previous_speed: float = speed
 
 const MAX_ANGER: float = 100
-const speed_modifier: float = 100
 
 var anger: float = 0
 var calmness: bool = false
 var stopped: bool
 var berserk: bool
-var direction: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,6 +33,7 @@ func _process(delta: float) -> void:
 	if not stopped:
 		position += direction * speed * delta
 	update_angryness(delta)
+	print(speed)
 
 func update_angryness(delta: float) -> void:
 	if stopped:
@@ -42,11 +42,10 @@ func update_angryness(delta: float) -> void:
 			MAX_ANGER
 		)
 
-		previous_speed = minf(
-			previous_speed + (speed_modifier / anger_speed_car) * delta,
+		speed = minf(
+			speed + (anger_speed_car * delta),
 			anger_max_speed
 		)
-		speed = 0
 		
 		if anger == MAX_ANGER:
 			berserk = true
@@ -57,12 +56,10 @@ func update_angryness(delta: float) -> void:
 			0.0
 		)
 
-		previous_speed = maxf(
-			previous_speed - (speed_modifier / anger_speed_car) * delta,
+		speed = maxf(
+			speed - (anger_speed_car * delta),
 			original_speed
 		)
-		
-		speed = previous_speed
 
 	var target_color: Color = Color(1.0, 1.0 - anger/100, 1.0 - anger/100)
 	polygon.color = target_color
@@ -79,5 +76,4 @@ func stop() -> void:
 
 func go() -> void:
 	stopped = false
-	speed = previous_speed
 	
