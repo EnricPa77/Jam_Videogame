@@ -33,7 +33,6 @@ func _process(delta: float) -> void:
 	if not stopped:
 		position += direction * speed * delta
 	update_angryness(delta)
-	print(speed)
 
 func update_angryness(delta: float) -> void:
 	if stopped:
@@ -76,4 +75,7 @@ func stop() -> void:
 
 func go() -> void:
 	stopped = false
-	
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()

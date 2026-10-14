@@ -155,8 +155,8 @@ metadata/_custom_type_script = "uid://ciiitacngdrol"
 
 [sub_resource type="Resource" id="Resource_7yui6"]
 script = ExtResource("13_e0ngr")
-start_hour = 600
-finish_hour = 750
+start_hour = 1000
+finish_hour = 1250
 spawn_position = 3
 spawn_cooldown = 2.0
 car_packed_scene = ExtResource("15_hgpy0")
@@ -169,11 +169,24 @@ metadata/_custom_type_script = "uid://ciiitacngdrol"
 
 [sub_resource type="Resource" id="Resource_kn0ld"]
 script = ExtResource("13_e0ngr")
-start_hour = 620
-finish_hour = 800
-spawn_cooldown = 2.0
+start_hour = 1000
+finish_hour = 1300
+spawn_cooldown = 5.0
 car_packed_scene = ExtResource("15_hgpy0")
 car_config = SubResource("Resource_hgpy0")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_t2t4p"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_0pcbe"]
+script = ExtResource("13_e0ngr")
+start_hour = 630
+finish_hour = 1000
+spawn_cooldown = 1.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_t2t4p")
 metadata/_custom_type_script = "uid://dqhh6kjmxvka"
 
 [node name="World" type="Node2D" unique_id=1719440579]
@@ -223,8 +236,8 @@ time_ends = 1320
 
 [node name="Spawner" parent="." unique_id=1155867531 instance=ExtResource("4_0fj1v")]
 position = Vector2(-23, 288)
-spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_7yui6")])
+spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_7yui6"), SubResource("Resource_kn0ld")])
 
-[node name="Spawner2" parent="." unique_id=1874607334 instance=ExtResource("4_0fj1v")]
-position = Vector2(224, 663)
-spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_kn0ld")])
+[node name="Spawner2" parent="." unique_id=1080920202 instance=ExtResource("4_0fj1v")]
+position = Vector2(224, 670)
+spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_0pcbe")])
