@@ -10,5 +10,6 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1264203748]
+wait_time = 2.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

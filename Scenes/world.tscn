@@ -158,11 +158,66 @@ metadata/_custom_type_script = "uid://ciiitacngdrol"
 [sub_resource type="Resource" id="Resource_7yui6"]
 script = ExtResource("13_e0ngr")
 start_hour = 600
-finish_hour = 700
+finish_hour = 620
 spawn_position = 3
-spawn_cooldown = 2.0
+spawn_cooldown = 4.0
 car_packed_scene = ExtResource("15_hgpy0")
 car_config = SubResource("Resource_e0ngr")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_2aivc"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_0qlku"]
+script = ExtResource("13_e0ngr")
+start_hour = 720
+finish_hour = 780
+spawn_position = 3
+spawn_cooldown = 6.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_2aivc")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_pyn1s"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_yq1aw"]
+script = ExtResource("13_e0ngr")
+start_hour = 840
+finish_hour = 900
+spawn_position = 3
+spawn_cooldown = 4.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_pyn1s")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_04jkj"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_r74th"]
+script = ExtResource("13_e0ngr")
+start_hour = 960
+finish_hour = 1020
+spawn_position = 3
+spawn_cooldown = 3.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_04jkj")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_t6yt7"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_al5m0"]
+script = ExtResource("13_e0ngr")
+start_hour = 1080
+finish_hour = 1140
+spawn_position = 3
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_t6yt7")
 metadata/_custom_type_script = "uid://dqhh6kjmxvka"
 
 [sub_resource type="Resource" id="Resource_t2t4p"]
@@ -172,12 +227,54 @@ metadata/_custom_type_script = "uid://ciiitacngdrol"
 
 [sub_resource type="Resource" id="Resource_hgpy0"]
 script = ExtResource("13_e0ngr")
-start_hour = 700
-finish_hour = 800
+start_hour = 620
+finish_hour = 680
 spawn_position = 3
-spawn_cooldown = 2.0
+spawn_cooldown = 4.0
 car_packed_scene = ExtResource("15_hgpy0")
 car_config = SubResource("Resource_t2t4p")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_dt0r1"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_qebug"]
+script = ExtResource("13_e0ngr")
+start_hour = 720
+finish_hour = 780
+spawn_position = 3
+spawn_cooldown = 3.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_dt0r1")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_r0ikl"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_3ua1v"]
+script = ExtResource("13_e0ngr")
+start_hour = 900
+finish_hour = 960
+spawn_position = 3
+spawn_cooldown = 6.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_r0ikl")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_p5wkl"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_ochwf"]
+script = ExtResource("13_e0ngr")
+start_hour = 960
+finish_hour = 1020
+spawn_position = 3
+spawn_cooldown = 3.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_p5wkl")
 metadata/_custom_type_script = "uid://dqhh6kjmxvka"
 
 [sub_resource type="Resource" id="Resource_axeuq"]
@@ -186,24 +283,110 @@ metadata/_custom_type_script = "uid://ciiitacngdrol"
 
 [sub_resource type="Resource" id="Resource_0pcbe"]
 script = ExtResource("13_e0ngr")
-start_hour = 700
-finish_hour = 1000
+start_hour = 610
+finish_hour = 640
 spawn_position = 1
 spawn_cooldown = 4.0
 car_packed_scene = ExtResource("15_hgpy0")
 car_config = SubResource("Resource_axeuq")
 metadata/_custom_type_script = "uid://dqhh6kjmxvka"
 
-[sub_resource type="Resource" id="Resource_yq1aw"]
+[sub_resource type="Resource" id="Resource_pt3ps"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_hmc15"]
+script = ExtResource("13_e0ngr")
+start_hour = 740
+finish_hour = 800
+spawn_position = 1
+spawn_cooldown = 6.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_pt3ps")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_o2rbt"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_1vso6"]
+script = ExtResource("13_e0ngr")
+start_hour = 860
+finish_hour = 920
+spawn_position = 1
+spawn_cooldown = 4.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_o2rbt")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_lkcvt"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_atqvy"]
+script = ExtResource("13_e0ngr")
+start_hour = 960
+finish_hour = 1020
+spawn_position = 1
+spawn_cooldown = 4.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_lkcvt")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_w5giw"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_jwdyn"]
+script = ExtResource("13_e0ngr")
+start_hour = 630
+finish_hour = 660
+spawn_position = 1
+spawn_cooldown = 3.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_w5giw")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_no8kt"]
 script = ExtResource("14_kn0ld")
 metadata/_custom_type_script = "uid://ciiitacngdrol"
 
 [sub_resource type="Resource" id="Resource_1cojt"]
 script = ExtResource("13_e0ngr")
+start_hour = 700
+finish_hour = 720
 spawn_position = 1
-spawn_cooldown = 2.0
+spawn_cooldown = 3.0
 car_packed_scene = ExtResource("15_hgpy0")
-car_config = SubResource("Resource_yq1aw")
+car_config = SubResource("Resource_no8kt")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_i4fjy"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_xbk3s"]
+script = ExtResource("13_e0ngr")
+start_hour = 780
+finish_hour = 840
+spawn_position = 1
+spawn_cooldown = 6.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_i4fjy")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_opbav"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_coyub"]
+script = ExtResource("13_e0ngr")
+start_hour = 960
+finish_hour = 1020
+spawn_position = 1
+spawn_cooldown = 3.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_opbav")
 metadata/_custom_type_script = "uid://dqhh6kjmxvka"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w4b7"]
@@ -295,19 +478,19 @@ time_ends = 1320
 
 [node name="LSpawner1" parent="Spawners" unique_id=1155867531 instance=ExtResource("4_0fj1v")]
 position = Vector2(-25, 175)
-spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_7yui6")])
+spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_7yui6"), SubResource("Resource_0qlku"), SubResource("Resource_yq1aw"), SubResource("Resource_r74th"), SubResource("Resource_al5m0")])
 
 [node name="LSpawner2" parent="Spawners" unique_id=1671985702 instance=ExtResource("4_0fj1v")]
 position = Vector2(-25, 399)
-spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_hgpy0")])
+spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_hgpy0"), SubResource("Resource_qebug"), SubResource("Resource_3ua1v"), SubResource("Resource_ochwf")])
 
 [node name="USpawner1" parent="Spawners" unique_id=1080920202 instance=ExtResource("4_0fj1v")]
 position = Vector2(320, -28)
-spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_0pcbe")])
+spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_0pcbe"), SubResource("Resource_hmc15"), SubResource("Resource_1vso6"), SubResource("Resource_atqvy")])
 
 [node name="USpawner2" parent="Spawners" unique_id=1676427618 instance=ExtResource("4_0fj1v")]
 position = Vector2(722, -28)
-spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_1cojt")])
+spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_jwdyn"), SubResource("Resource_1cojt"), SubResource("Resource_xbk3s"), SubResource("Resource_coyub")])
 
 [node name="Lights" type="Node2D" parent="." unique_id=1448907445]
 
@@ -439,3 +622,6 @@ toggle_mode = true
 button_group = ExtResource("18_yq1aw")
 texture_normal = ExtResource("18_0pcbe")
 texture_pressed = ExtResource("20_1cojt")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1177767928]
+position = Vector2(576, 324)
