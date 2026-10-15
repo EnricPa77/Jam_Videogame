@@ -21,5 +21,5 @@ func _on_timer_timeout() -> void:
 func update_time() -> void:
 	hour = (time_start / 60)
 	minutes = time_start - hour * 60
-	current_time = time_start + minutes
+	current_time = time_start
 	label.text = '%02d:%02d' % [hour, minutes]
