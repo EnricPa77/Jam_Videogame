@@ -9,6 +9,7 @@ var spawn_position: Array[SpawnerConfig.SpawnPosition]
 var spawn_cooldown: Array[float]
 var car_packed_scene: Array[PackedScene]
 var car_config: Array[CarConfig]
+var timer_configured: bool
 
 enum SpawnPosition {
 	UP,
@@ -31,9 +32,13 @@ func _ready() -> void:
 		spawn_cooldown.append(spawner.spawn_cooldown)
 		
 
-	timer.wait_time = 1.0
-	timer.start()
-
+func _process(delta: float) -> void:
+	if (not timer_configured) and (clock != null):
+		var spawner_config: SpawnerConfig = get_current_configuration(clock.current_time)
+		if spawner_config != null:
+			timer.wait_time = spawner_config.spawn_cooldown
+			timer.start()
+			timer_configured = true
 
 func _on_timer_timeout() -> void:
 	if clock == null:
