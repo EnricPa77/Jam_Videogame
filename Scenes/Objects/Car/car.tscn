@@ -9,7 +9,7 @@
 size = Vector2(24, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7hxs"]
-size = Vector2(20, 12)
+size = Vector2(1, 17)
 
 [node name="Car" type="Node2D" unique_id=1565253735]
 script = ExtResource("1_go66d")
@@ -32,7 +32,7 @@ texture = ExtResource("1_wqo35")
 script = ExtResource("3_1sfmx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxCheckerCar" unique_id=343467288]
-position = Vector2(0, 31)
+position = Vector2(0, 33.5)
 shape = SubResource("RectangleShape2D_i7hxs")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1105987461]

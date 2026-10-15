@@ -9,6 +9,7 @@ size = Vector2(6.8148155, 9.777778)
 [node name="Light" type="Node2D" unique_id=738770112]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_wh1uv")
+light_cooldown = 1.5
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1955720034]
 texture_filter = 1
