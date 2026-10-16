@@ -1,10 +1,8 @@
 class_name Light extends Node2D
 
 @export var light_cooldown: float
-
-@onready var color_up: Polygon2D = $ColorUp
-@onready var color_down: Polygon2D = $ColorDown
 @onready var timer: Timer = $Timer
+
 @export var tex_red: Texture2D
 @export var tex_green: Texture2D
 @onready var sprite: Sprite2D = $Sprite2D

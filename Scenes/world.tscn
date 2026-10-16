@@ -217,6 +217,7 @@ script = ExtResource("13_e0ngr")
 start_hour = 1080
 finish_hour = 1140
 spawn_position = 3
+spawn_cooldown = 3.0
 car_packed_scene = ExtResource("15_hgpy0")
 car_config = SubResource("Resource_t6yt7")
 metadata/_custom_type_script = "uid://dqhh6kjmxvka"
