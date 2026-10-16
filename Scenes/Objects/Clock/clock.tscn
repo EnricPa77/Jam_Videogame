@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bkkjw2co0f6nl"]
+
+[ext_resource type="Script" uid="uid://cs4mn1yd3o6so" path="res://Scripts/Objects/Clock/clock.gd" id="1_0qlku"]
+
+[node name="Clock" type="Node2D" unique_id=436101982]
+script = ExtResource("1_0qlku")
+
+[node name="Label" type="Label" parent="." unique_id=658910992]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1264203748]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
