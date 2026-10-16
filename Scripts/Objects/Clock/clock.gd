@@ -1,5 +1,7 @@
 class_name Clock extends Node2D
 
+signal time_changed(hour: int, minutes: int)
+
 @onready var label = $Label
 @onready var timer = $Timer
 @export var time_start: int
@@ -23,3 +25,5 @@ func update_time() -> void:
 	minutes = time_start - hour * 60
 	current_time = time_start
 	label.text = '%02d:%02d' % [hour, minutes]
+	label.text = '%02d:%02d' % [hour, minutes]
+	time_changed.emit(hour, minutes)
