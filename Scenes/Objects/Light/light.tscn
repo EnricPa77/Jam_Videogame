@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bdlikyeldyym1"]
 
-[ext_resource type="Texture2D" uid="uid://cwks3bx4sm7q0" path="res://Assets/Signal/signal.png" id="1_aw42n"]
 [ext_resource type="Script" uid="uid://dtv51wwii7u1r" path="res://Scripts/Objects/Light/light.gd" id="1_wh1uv"]
+[ext_resource type="Texture2D" uid="uid://cwtwl4ooiftmp" path="res://Assets/Signal/light_off.png" id="2_lnigu"]
+[ext_resource type="Texture2D" uid="uid://cgsfa1j1vkeec" path="res://Assets/Signal/light_on.png" id="3_ewek3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3iwoq"]
 size = Vector2(6.8148155, 9.777778)
@@ -9,33 +10,26 @@ size = Vector2(6.8148155, 9.777778)
 [node name="Light" type="Node2D" unique_id=738770112]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_wh1uv")
-light_cooldown = 1.5
+light_cooldown = 1.0
+tex_red = ExtResource("2_lnigu")
+tex_green = ExtResource("3_ewek3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1955720034]
 texture_filter = 1
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_aw42n")
+texture = ExtResource("2_lnigu")
 
 [node name="LightArea" type="Area2D" parent="." unique_id=1072184064]
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LightArea" unique_id=31854101]
+visible = false
 position = Vector2(0.6666668, -0.22222191)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_3iwoq")
 
 [node name="Timer" type="Timer" parent="." unique_id=239450989]
 wait_time = 0.05
-
-[node name="ColorUp" type="Polygon2D" parent="." unique_id=1452449626]
-position = Vector2(-4.3648005, -1.3333349)
-scale = Vector2(0.060800057, 0.11111098)
-polygon = PackedVector2Array(-10.666666, -6.7499995, -10.666667, -6, 6, -6, 6, -12, -10.666666, -11.999999)
-
-[node name="ColorDown" type="Polygon2D" parent="." unique_id=1965014644]
-position = Vector2(-4.6666665, 8.666666)
-scale = Vector2(0.03165061, 0.11111088)
-polygon = PackedVector2Array(-10.666667, -6, -10.666667, -6, 10.396667, -6, 10.396667, -12, -10.666667, -12)
 
 [connection signal="input_event" from="LightArea" to="." method="_on_light_area_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
