@@ -222,6 +222,20 @@ car_packed_scene = ExtResource("15_hgpy0")
 car_config = SubResource("Resource_t6yt7")
 metadata/_custom_type_script = "uid://dqhh6kjmxvka"
 
+[sub_resource type="Resource" id="Resource_0sgyr"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_b4e6k"]
+script = ExtResource("13_e0ngr")
+start_hour = 1170
+finish_hour = 1300
+spawn_position = 3
+spawn_cooldown = 4.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_0sgyr")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
 [sub_resource type="Resource" id="Resource_t2t4p"]
 script = ExtResource("14_kn0ld")
 anger_speed_car = 10.0
@@ -277,6 +291,34 @@ spawn_position = 3
 spawn_cooldown = 3.0
 car_packed_scene = ExtResource("15_hgpy0")
 car_config = SubResource("Resource_p5wkl")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_ouhk6"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_36hh2"]
+script = ExtResource("13_e0ngr")
+start_hour = 1100
+finish_hour = 1160
+spawn_position = 3
+spawn_cooldown = 2.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_ouhk6")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_13n8b"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_l33cg"]
+script = ExtResource("13_e0ngr")
+start_hour = 1170
+finish_hour = 1260
+spawn_position = 3
+spawn_cooldown = 3.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_13n8b")
 metadata/_custom_type_script = "uid://dqhh6kjmxvka"
 
 [sub_resource type="Resource" id="Resource_axeuq"]
@@ -335,6 +377,34 @@ car_packed_scene = ExtResource("15_hgpy0")
 car_config = SubResource("Resource_lkcvt")
 metadata/_custom_type_script = "uid://dqhh6kjmxvka"
 
+[sub_resource type="Resource" id="Resource_6mm6r"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_k1ci5"]
+script = ExtResource("13_e0ngr")
+start_hour = 1090
+finish_hour = 1150
+spawn_position = 1
+spawn_cooldown = 3.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_6mm6r")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_gwaj6"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_uqdn7"]
+script = ExtResource("13_e0ngr")
+start_hour = 1200
+finish_hour = 1280
+spawn_position = 1
+spawn_cooldown = 3.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_gwaj6")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
 [sub_resource type="Resource" id="Resource_w5giw"]
 script = ExtResource("14_kn0ld")
 metadata/_custom_type_script = "uid://ciiitacngdrol"
@@ -389,6 +459,34 @@ spawn_position = 1
 spawn_cooldown = 3.0
 car_packed_scene = ExtResource("15_hgpy0")
 car_config = SubResource("Resource_opbav")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_te07t"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_xcb5n"]
+script = ExtResource("13_e0ngr")
+start_hour = 1140
+finish_hour = 1200
+spawn_position = 1
+spawn_cooldown = 3.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_te07t")
+metadata/_custom_type_script = "uid://dqhh6kjmxvka"
+
+[sub_resource type="Resource" id="Resource_vhf2b"]
+script = ExtResource("14_kn0ld")
+metadata/_custom_type_script = "uid://ciiitacngdrol"
+
+[sub_resource type="Resource" id="Resource_36g3o"]
+script = ExtResource("13_e0ngr")
+start_hour = 1240
+finish_hour = 1300
+spawn_position = 1
+spawn_cooldown = 2.0
+car_packed_scene = ExtResource("15_hgpy0")
+car_config = SubResource("Resource_vhf2b")
 metadata/_custom_type_script = "uid://dqhh6kjmxvka"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w4b7"]
@@ -480,19 +578,19 @@ time_ends = 1320
 
 [node name="LSpawner1" parent="Spawners" unique_id=1155867531 instance=ExtResource("4_0fj1v")]
 position = Vector2(-25, 175)
-spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_7yui6"), SubResource("Resource_0qlku"), SubResource("Resource_yq1aw"), SubResource("Resource_r74th"), SubResource("Resource_al5m0")])
+spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_7yui6"), SubResource("Resource_0qlku"), SubResource("Resource_yq1aw"), SubResource("Resource_r74th"), SubResource("Resource_al5m0"), SubResource("Resource_b4e6k")])
 
 [node name="LSpawner2" parent="Spawners" unique_id=1671985702 instance=ExtResource("4_0fj1v")]
 position = Vector2(-25, 399)
-spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_hgpy0"), SubResource("Resource_qebug"), SubResource("Resource_3ua1v"), SubResource("Resource_ochwf")])
+spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_hgpy0"), SubResource("Resource_qebug"), SubResource("Resource_3ua1v"), SubResource("Resource_ochwf"), SubResource("Resource_36hh2"), SubResource("Resource_l33cg")])
 
 [node name="USpawner1" parent="Spawners" unique_id=1080920202 instance=ExtResource("4_0fj1v")]
 position = Vector2(320, -28)
-spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_0pcbe"), SubResource("Resource_hmc15"), SubResource("Resource_1vso6"), SubResource("Resource_atqvy")])
+spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_0pcbe"), SubResource("Resource_hmc15"), SubResource("Resource_1vso6"), SubResource("Resource_atqvy"), SubResource("Resource_k1ci5"), SubResource("Resource_uqdn7")])
 
 [node name="USpawner2" parent="Spawners" unique_id=1676427618 instance=ExtResource("4_0fj1v")]
 position = Vector2(722, -28)
-spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_jwdyn"), SubResource("Resource_1cojt"), SubResource("Resource_xbk3s"), SubResource("Resource_coyub")])
+spawner_config = Array[ExtResource("13_e0ngr")]([SubResource("Resource_jwdyn"), SubResource("Resource_1cojt"), SubResource("Resource_xbk3s"), SubResource("Resource_coyub"), SubResource("Resource_xcb5n"), SubResource("Resource_36g3o")])
 
 [node name="Lights" type="Node2D" parent="." unique_id=1448907445]
 
