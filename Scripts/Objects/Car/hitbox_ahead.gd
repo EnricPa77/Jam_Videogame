@@ -7,8 +7,13 @@ func _process(delta: float) -> void:
 	
 	for area in areas:
 		if area.get_parent() is Car:
-			var car: Car = area.get_parent()
-			if (car.stopped and not self.car.berserk):
+			var other_car: Car = area.get_parent()
+			if (other_car.stopped and not car.berserk):
 				self.car.stop()
+<<<<<<< Updated upstream
 			else:
+=======
+			elif other_car.rotation == car.rotation:
+				self.car.speed = car.speed
+>>>>>>> Stashed changes
 				self.car.go()

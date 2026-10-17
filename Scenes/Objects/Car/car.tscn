@@ -32,7 +32,11 @@ texture = ExtResource("1_wqo35")
 script = ExtResource("3_1sfmx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxCheckerCar" unique_id=343467288]
+<<<<<<< Updated upstream
 position = Vector2(0, 31)
+=======
+position = Vector2(0, 34)
+>>>>>>> Stashed changes
 shape = SubResource("RectangleShape2D_i7hxs")
 
 [connection signal="area_entered" from="HitboxCar" to="." method="_on_area_2d_area_entered"]
