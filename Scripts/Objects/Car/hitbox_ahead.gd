@@ -11,5 +11,8 @@ func _process(delta: float) -> void:
 			if (other_car.stopped and not car.berserk):
 				self.car.stop()
 			elif other_car.rotation == car.rotation:
-				self.car.speed = car.speed
-				self.car.go()
+				if other_car.speed < car.speed:
+					self.car.speed = other_car.speed
+				else:
+					self.car.speed = car.speed
+					self.car.go()

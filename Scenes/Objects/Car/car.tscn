@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://b2md2jxblb2x0" path="res://Scripts/Objects/Car/hitbox_ahead.gd" id="3_1sfmx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ih278"]
-size = Vector2(24, 42)
+size = Vector2(22, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7hxs"]
 size = Vector2(1, 17)
