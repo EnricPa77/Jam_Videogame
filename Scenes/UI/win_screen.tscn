@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://dfcc61l8w7hbb"]
+
+[ext_resource type="Script" uid="uid://csihtaqt5g84w" path="res://Scripts/UI/win_screen.gd" id="1_bsq8g"]
+[ext_resource type="StyleBox" uid="uid://dpo3qj04pd8yv" path="res://Styles/HUD_style.tres" id="3_3ykf0"]
+[ext_resource type="FontFile" uid="uid://153c7ihbwso" path="res://Assets/Fonts/Silkscreen-Bold.ttf" id="4_3283q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5iyp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8627451, 0.7019608, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrofy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8627451, 0.7019608, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ykf0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8627451, 0.7019608, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="WinScreen" type="CanvasLayer" unique_id=1452354423]
+process_mode = 3
+script = ExtResource("1_bsq8g")
+
+[node name="Shade" type="ColorRect" parent="." unique_id=554663067]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="PanelContainer" type="CenterContainer" parent="." unique_id=2137769791]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Border" type="PanelContainer" parent="PanelContainer" unique_id=2144069882]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k5iyp")
+
+[node name="Background" type="PanelContainer" parent="PanelContainer/Border" unique_id=1914979630]
+custom_minimum_size = Vector2(380, 300)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_3ykf0")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Border/Background" unique_id=54063589]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="Label" parent="PanelContainer/Border/Background/MarginContainer" unique_id=967294711]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.8627451, 0.7019608, 0, 1)
+theme_override_fonts/font = ExtResource("4_3283q")
+theme_override_font_sizes/font_size = 65
+text = "YOU WIN"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Border/Background/MarginContainer" unique_id=849490255]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Border/Background/MarginContainer/MarginContainer" unique_id=1058347077]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ExitToMenu" type="Button" parent="PanelContainer/Border/Background/MarginContainer/MarginContainer/VBoxContainer" unique_id=277658361]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(250, 46)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8627451, 0.7019608, 0, 1)
+theme_override_fonts/font = ExtResource("4_3283q")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_jrofy")
+text = "EXIT TO MENU"
+
+[node name="Exit" type="Button" parent="PanelContainer/Border/Background/MarginContainer/MarginContainer/VBoxContainer" unique_id=55777295]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(250, 46)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8627451, 0.7019608, 0, 1)
+theme_override_fonts/font = ExtResource("4_3283q")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ykf0")
+text = "EXIT"
