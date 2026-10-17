@@ -1,5 +1,6 @@
 class_name Camera extends Camera2D
 
+@onready var world: World = get_tree().root.find_child("World", true, false) as World
 
 var collision_impact: Vector2
 var handled_sum: bool
@@ -33,6 +34,8 @@ func move_to_collision():
 	tween.tween_property(self, "position", position_to, 1.0)
 	
 	tween.tween_property(self, "zoom", zoom_to, 1.0)
+	
+	world.lost()
 	
 	
 	

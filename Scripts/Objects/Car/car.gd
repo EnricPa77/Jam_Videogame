@@ -16,6 +16,7 @@ class_name Car extends Node2D
 @onready var polygon: Polygon2D = $Polygon2D
 @onready var original_speed: float = speed
 @onready var camera: Camera
+@onready var world: Node2D = get_tree().root.find_child("World", true, false) as Node2D
 
 const MAX_ANGER: float = 100
 
@@ -25,14 +26,15 @@ var stopped: bool
 var berserk: bool
 
 func _ready() -> void:
-	var world: Node2D = get_tree().root.find_child("World", true, false) as Node2D
-	
 	if world:
 		camera = world.get_node_or_null("Camera") as Camera;
+	if world is World:
+		world.cars += 1
 
 func _process(delta: float) -> void:
 	if not stopped:
 		position += direction * speed * delta
+	#print("Furia: ", anger , "Velocidad: ", speed, "Parado: ", stopped)
 	update_angryness(delta)
 
 func update_angryness(delta: float) -> void:
@@ -48,6 +50,7 @@ func update_angryness(delta: float) -> void:
 		)
 		
 		if anger == MAX_ANGER:
+			stopped = false
 			berserk = true
 
 	elif not berserk and calmness:
@@ -77,4 +80,6 @@ func go() -> void:
 	stopped = false
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	if world is World:
+		world.cars -= 1
 	queue_free()

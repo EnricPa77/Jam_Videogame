@@ -1,10 +1,9 @@
-extends CanvasLayer
+class_name LoseScreen extends CanvasLayer
 
 
 @onready var retry_button: Button = %Retry
 
 func _ready() -> void:
-	visible = false
 	retry_button.pressed.connect(_on_retry_pressed)
 
 	# Solo para probar la escena sola con F6

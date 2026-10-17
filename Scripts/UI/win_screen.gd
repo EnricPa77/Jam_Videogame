@@ -1,4 +1,4 @@
-extends CanvasLayer
+class_name WinScreen extends CanvasLayer
 
 const MAIN_MENU := "res://Scenes/UI/main_menu.tscn" # ajusta la ruta
 
@@ -6,7 +6,6 @@ const MAIN_MENU := "res://Scenes/UI/main_menu.tscn" # ajusta la ruta
 @onready var exit_button: Button = %Exit
 
 func _ready() -> void:
-	visible = false
 	exit_to_menu_button.pressed.connect(_on_exit_to_menu_pressed)
 	exit_button.pressed.connect(_on_exit_pressed)
 
