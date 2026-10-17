@@ -88,20 +88,6 @@ func create_timers(cooldown: float, i: int) -> void:
 	add_child(timer)
 	timers.append(timer)
 
-		car.speed = spawner_config.car_config.speed
-		car.anger_speed_increase = spawner_config.car_config.anger_speed_increase
-		car.anger_speed_decrease = spawner_config.car_config.anger_speed_decrease
-		car.anger_speed_car = spawner_config.car_config.anger_speed_car
-		car.anger_max_speed = spawner_config.car_config.anger_max_speed
-
-func create_timers(cooldown: float, i: int) -> void:
-	var timer := Timer.new()
-	timer.wait_time = cooldown
-	timer.timeout.connect(_on_timer_timeout.bind(i))
-	
-	add_child(timer)
-	timers.append(timer)
-
 func get_index_current_configuration(current_time: int) -> int:
 	for i in range(spawner_config.size()):
 		if (current_time >= spawner_config[i].start_hour) and (current_time < spawner_config[i].finish_hour):
@@ -125,7 +111,7 @@ func spawn_car(config: SpawnerConfig) -> void:
 	manage_direction(car, config)
 	
 
-  if await check_spawn(car):
+	if await check_spawn(car):
 		get_tree().current_scene.add_child(car)
 
 	
