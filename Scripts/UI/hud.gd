@@ -17,12 +17,13 @@ func _ready() -> void:
 	red_button.button_pressed = true
 	red_button.pressed.connect(_on_red_pressed)
 	green_button.pressed.connect(_on_green_pressed)
-
+	
 	# Reloj del nivel
 	if level_clock:
 		level_clock.time_changed.connect(_on_time_changed)
 		_on_time_changed(level_clock.hour, level_clock.minutes)
-
+	_on_red_pressed.call_deferred()
+	
 func _on_time_changed(hour: int, minutes: int) -> void:
 	clock_value.text = "%02d:%02d" % [hour, minutes]
 

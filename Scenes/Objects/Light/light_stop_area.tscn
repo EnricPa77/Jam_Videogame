@@ -9,5 +9,13 @@ size = Vector2(2, 24)
 script = ExtResource("1_vaxnf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2056163199]
+visible = false
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_i7hxs")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=289871255]
+offset_left = -1.0
+offset_top = -11.0
+offset_right = 1.0
+offset_bottom = 13.0
+color = Color(1, 0.05490196, 0, 0.8862745)

@@ -17,6 +17,8 @@ func _ready() -> void:
 		timer.start()
 		change_color()
 		cooldown_ready = true
+	sprite.texture = tex_red if stop else tex_green
+	_refresh_visual()
 
 func _on_light_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("click") and (cooldown_ready):
@@ -24,21 +26,22 @@ func _on_light_area_input_event(viewport: Node, event: InputEvent, shape_idx: in
 
 func change_color() -> void:
 	stop = not stop
-	if stop:
-		sprite.texture = tex_red
-		stop = true
-	else:
-		sprite.texture = tex_green
-		stop = false
-	cooldown_ready = false;
+	_refresh_visual()
+	cooldown_ready = false
+
 func get_stop() -> bool:
 	return stop
 	
 func set_stop(value: bool) -> void:
-	if stop == value:
-		return
-	change_color()
+	stop = value
+	_refresh_visual()
 	cooldown_ready = true
 
 func _on_timer_timeout() -> void:
 	cooldown_ready = true
+
+func _refresh_visual() -> void:
+	sprite.texture = tex_red if stop else tex_green
+	var area = get_node_or_null("StopArea")
+	if area:
+		area.update_color(stop)
