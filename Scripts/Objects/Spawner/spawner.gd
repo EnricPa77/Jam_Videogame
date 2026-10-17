@@ -78,6 +78,21 @@ func configurate_car_stats(car: Car, spawner_config: SpawnerConfig) -> void:
 		car.anger_speed_decrease = spawner_config.car_config.anger_speed_decrease
 		car.anger_speed_car = spawner_config.car_config.anger_speed_car
 		car.anger_max_speed = spawner_config.car_config.anger_max_speed
+		car.global_position = global_position
+
+func create_timers(cooldown: float, i: int) -> void:
+	var timer := Timer.new()
+	timer.wait_time = cooldown
+	timer.timeout.connect(_on_timer_timeout.bind(i))
+	
+	add_child(timer)
+	timers.append(timer)
+
+		car.speed = spawner_config.car_config.speed
+		car.anger_speed_increase = spawner_config.car_config.anger_speed_increase
+		car.anger_speed_decrease = spawner_config.car_config.anger_speed_decrease
+		car.anger_speed_car = spawner_config.car_config.anger_speed_car
+		car.anger_max_speed = spawner_config.car_config.anger_max_speed
 
 func create_timers(cooldown: float, i: int) -> void:
 	var timer := Timer.new()
@@ -109,6 +124,59 @@ func spawn_car(config: SpawnerConfig) -> void:
 	
 	manage_direction(car, config)
 	
-	get_tree().current_scene.add_child(car)
-	car.global_position = global_position
+
+  if await check_spawn(car):
+		get_tree().current_scene.add_child(car)
+
 	
+	
+func check_spawn(car: Car) -> bool:
+	var check_spawn: Area2D = Area2D.new()
+	var collision := CollisionShape2D.new()
+	var rectangle := RectangleShape2D.new()
+	
+	var hitbox_car := car.get_node_or_null("HitboxCar") as Area2D
+	var hitbox_checker := car.get_node_or_null("HitboxCheckerCar") as Area2D
+	
+	if hitbox_car == null or hitbox_checker == null:
+		return false
+	
+	var shape_car := hitbox_car.get_child(0) as CollisionShape2D
+	var shape_checker := hitbox_checker.get_child(0) as CollisionShape2D
+	
+	if shape_car == null or shape_checker == null:
+		return false
+	
+	var rect_car := shape_car.shape as RectangleShape2D
+	var rect_checker := shape_checker.shape as RectangleShape2D
+	
+	if rect_car == null or rect_checker == null:
+		return false
+	
+	rectangle.size = rect_car.size + rect_checker.size
+	collision.shape = rectangle
+	
+	check_spawn.add_child(collision)
+	
+	check_spawn.collision_layer = 0
+	check_spawn.collision_mask = hitbox_car.collision_mask
+	check_spawn.monitoring = true
+
+	get_tree().current_scene.add_child(check_spawn)
+	check_spawn.global_transform = hitbox_car.global_transform
+
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+
+
+	var can_spawn := true
+
+	for area in check_spawn.get_overlapping_areas():
+		print(area)
+		if area is HitboxCar:
+			can_spawn = false
+			break
+
+	check_spawn.queue_free()
+
+	return can_spawn
