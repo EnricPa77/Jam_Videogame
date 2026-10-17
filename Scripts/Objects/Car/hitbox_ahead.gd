@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	for area in areas:
 		if area.get_parent() is Car:
 			var other_car: Car = area.get_parent()
-			if (other_car.stopped and not car.berserk):
+			if (other_car.stopped) and not (car.berserk) and (other_car.rotation == car.rotation):
 				self.car.stop()
 			elif other_car.rotation == car.rotation:
 				if other_car.speed < car.speed:
