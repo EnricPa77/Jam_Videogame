@@ -10,10 +10,6 @@ func _process(delta: float) -> void:
 			var other_car: Car = area.get_parent()
 			if (other_car.stopped and not car.berserk):
 				self.car.stop()
-<<<<<<< Updated upstream
-			else:
-=======
 			elif other_car.rotation == car.rotation:
 				self.car.speed = car.speed
->>>>>>> Stashed changes
 				self.car.go()
