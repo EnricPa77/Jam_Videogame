@@ -1,0 +1,13 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://dpo3qj04pd8yv"]
+
+[sub_resource type="Gradient" id="Gradient_t2t4p"]
+offsets = PackedFloat32Array(0.73134327, 1)
+colors = PackedColorArray(0.14117648, 0.20784314, 0.18431373, 1, 0.101960786, 0.14901961, 0.13333334, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0pcbe"]
+gradient = SubResource("Gradient_t2t4p")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[resource]
+texture = SubResource("GradientTexture2D_0pcbe")

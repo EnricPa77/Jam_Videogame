@@ -1,6 +1,7 @@
 extends Button
 
 @export var glow_color := Color("3CC85A")
+@export var run_default_action := true
 
 const BG := Color("141418")
 const BORDER_IDLE := Color("34363E")
@@ -28,5 +29,7 @@ func _make_style(border: Color, glow: bool) -> StyleBoxFlat:
 
 
 func _on_pressed():
+	if not run_default_action:
+		return
 	get_tree().paused = false
 	visible = false
