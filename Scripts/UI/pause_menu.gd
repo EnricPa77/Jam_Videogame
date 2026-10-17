@@ -1,0 +1,46 @@
+extends CanvasLayer
+
+const MAIN_MENU := "res://Scenes/UI/main_menu.tscn" # ajusta la ruta
+
+@onready var continue_button = $PanelContainer/Border/Background/MarginContainer/MarginContainer/VBoxContainer/Continue
+@onready var options_button = $PanelContainer/Border/Background/MarginContainer/MarginContainer/VBoxContainer/Options
+@onready var exit_to_menu_button = $PanelContainer/Border/Background/MarginContainer/MarginContainer/VBoxContainer/ExitToMenu
+@onready var exit_button = $PanelContainer/Border/Background/MarginContainer/MarginContainer/VBoxContainer/Exit
+
+
+var _was_paused := false
+
+func _ready() -> void:
+	visible = false
+	continue_button.pressed.connect(resume)
+	options_button.pressed.connect(_on_options_pressed)
+	exit_to_menu_button.pressed.connect(_on_exit_to_menu_pressed)
+	exit_button.pressed.connect(_on_exit_pressed)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not event.is_action_pressed("Pause"):
+		return
+	if visible:
+		resume()
+	else:
+		pause()
+	get_viewport().set_input_as_handled()
+
+func pause() -> void:
+	_was_paused = get_tree().paused # recuerda si ya estaba pausado (antes del START)
+	get_tree().paused = true
+	visible = true
+
+func resume() -> void:
+	get_tree().paused = _was_paused # vuelve al estado anterior
+	visible = false
+
+func _on_options_pressed() -> void:
+	pass # aquí abrirás las opciones
+
+func _on_exit_to_menu_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file(MAIN_MENU) # o change_scene_to_file(MAIN_MENU), según el caso
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()
