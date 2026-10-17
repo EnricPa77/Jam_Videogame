@@ -15,6 +15,7 @@ class_name Car extends Node2D
 
 @onready var polygon: Polygon2D = $Polygon2D
 @onready var original_speed: float = speed
+@onready var camera: Camera
 
 const MAX_ANGER: float = 100
 
@@ -23,6 +24,11 @@ var calmness: bool = false
 var stopped: bool
 var berserk: bool
 
+func _ready() -> void:
+	var world: Node2D = get_tree().root.find_child("World", true, false) as Node2D
+	
+	if world:
+		camera = world.get_node_or_null("Camera") as Camera;
 
 func _process(delta: float) -> void:
 	if not stopped:
@@ -61,8 +67,8 @@ func update_angryness(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is HitboxCar:
-		print("Me he estrellado chat")
-
+		camera.sum_impacts(self.global_position, area.global_position)
+		camera.move_to_collision()
 
 func stop() -> void:
 	stopped = true
@@ -72,7 +78,3 @@ func go() -> void:
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
-
-
-func _on_hitbox_checker_car_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.

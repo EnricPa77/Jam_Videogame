@@ -37,7 +37,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if clock == null:
 		return
-		
+
 	var new_index: int = get_index_current_configuration(clock.current_time)
 	
 	if new_index != active_config_index:
@@ -158,7 +158,6 @@ func check_spawn(car: Car) -> bool:
 	var can_spawn := true
 
 	for area in check_spawn.get_overlapping_areas():
-		print(area)
 		if area is HitboxCar:
 			can_spawn = false
 			break
