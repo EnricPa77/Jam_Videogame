@@ -24,6 +24,7 @@
 [ext_resource type="ButtonGroup" uid="uid://lme5n7e3w7w4" path="res://Groups/lighs_group.tres" id="18_yq1aw"]
 [ext_resource type="Texture2D" uid="uid://5clw3sh5fvqd" path="res://Assets/UI/green_light.png" id="20_1cojt"]
 [ext_resource type="PackedScene" uid="uid://bsimfxk32f01n" path="res://Scenes/UI/main_menu_button.tscn" id="23_no8kt"]
+[ext_resource type="Script" uid="uid://cfdf0prdpgvs0" path="res://Scripts/Objects/Camera/camera.gd" id="25_i4fjy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7acu"]
 texture = ExtResource("5_k7acu")
@@ -741,5 +742,6 @@ text = "START"
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1177767928]
 position = Vector2(576, 324)
+script = ExtResource("25_i4fjy")
 
 [connection signal="pressed" from="HUD/Border/Background/MarginContainer/VBoxContainer/Start" to="HUD/Border/Background/MarginContainer/VBoxContainer/Start" method="_on_pressed"]
