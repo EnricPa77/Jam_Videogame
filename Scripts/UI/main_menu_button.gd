@@ -25,3 +25,8 @@ func _make_style(border: Color, glow: bool) -> StyleBoxFlat:
 		s.shadow_color = Color(border, 0.5)
 		s.shadow_size = 10
 	return s
+
+
+func _on_pressed():
+	get_tree().paused = false
+	visible = false

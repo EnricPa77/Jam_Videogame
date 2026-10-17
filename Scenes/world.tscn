@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://b8tmd5xppk8x6"]
 
+[ext_resource type="Script" uid="uid://cvthq7q3erd5k" path="res://Scripts/World/world.gd" id="1_xbk3s"]
 [ext_resource type="PackedScene" uid="uid://bdlikyeldyym1" path="res://Scenes/Objects/Light/light.tscn" id="3_5v1tr"]
 [ext_resource type="PackedScene" uid="uid://b24d70d1buyog" path="res://Scenes/Objects/Spawner/spawner.tscn" id="4_0fj1v"]
 [ext_resource type="Texture2D" uid="uid://bh4gbtancdnue" path="res://Assets/Decoration/big_house.png" id="5_7yui6"]
@@ -22,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b4foa782j8svo" path="res://Assets/UI/red_light.png" id="18_axeuq"]
 [ext_resource type="ButtonGroup" uid="uid://lme5n7e3w7w4" path="res://Groups/lighs_group.tres" id="18_yq1aw"]
 [ext_resource type="Texture2D" uid="uid://5clw3sh5fvqd" path="res://Assets/UI/green_light.png" id="20_1cojt"]
+[ext_resource type="PackedScene" uid="uid://bsimfxk32f01n" path="res://Scenes/UI/main_menu_button.tscn" id="23_no8kt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7acu"]
 texture = ExtResource("5_k7acu")
@@ -543,6 +545,7 @@ shadow_size = 1
 shadow_offset = Vector2(2, 2)
 
 [node name="World" type="Node2D" unique_id=1719440579]
+script = ExtResource("1_xbk3s")
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1307264675]
 
@@ -633,6 +636,7 @@ position = Vector2(737, 251)
 rotation = 1.5707964
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1299937296 node_paths=PackedStringArray("level_clock")]
+process_mode = 3
 script = ExtResource("17_pyn1s")
 level_clock = NodePath("../Clock")
 
@@ -728,5 +732,14 @@ button_group = ExtResource("18_yq1aw")
 texture_normal = ExtResource("18_0pcbe")
 texture_pressed = ExtResource("20_1cojt")
 
+[node name="Start" parent="HUD/Border/Background/MarginContainer/VBoxContainer" unique_id=1937142157 instance=ExtResource("23_no8kt")]
+custom_minimum_size = Vector2(194.695, 46)
+layout_mode = 2
+theme_override_colors/font_color = Color(16.638432, 16.638432, 16.638432, 1)
+theme_override_font_sizes/font_size = 36
+text = "START"
+
 [node name="Camera" type="Camera2D" parent="." unique_id=1177767928]
 position = Vector2(576, 324)
+
+[connection signal="pressed" from="HUD/Border/Background/MarginContainer/VBoxContainer/Start" to="HUD/Border/Background/MarginContainer/VBoxContainer/Start" method="_on_pressed"]

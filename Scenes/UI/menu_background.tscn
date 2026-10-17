@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://besepgj3pmunb"]
+
+[ext_resource type="Texture2D" uid="uid://djk763viu5anx" path="res://Assets/Tiles/c_road_tile.png" id="1_oua2g"]
+[ext_resource type="Texture2D" uid="uid://2b3xtbdodep4" path="res://Assets/Tiles/h_road_tile.png" id="2_6dwgt"]
+[ext_resource type="Texture2D" uid="uid://cioqg2hjktxbq" path="res://Assets/Tiles/v_road_tile.png" id="3_v1er6"]
+[ext_resource type="Texture2D" uid="uid://cqjy17lsnp20w" path="res://Assets/Tiles/background.png" id="4_uiop7"]
+[ext_resource type="Texture2D" uid="uid://bh4gbtancdnue" path="res://Assets/Decoration/big_house.png" id="5_qqob4"]
+[ext_resource type="Texture2D" uid="uid://cnh7pdwkrj4qn" path="res://Assets/Decoration/big_tree.png" id="6_c31k2"]
+[ext_resource type="Texture2D" uid="uid://dxhy1enhnj12m" path="res://Assets/Decoration/small_house.png" id="7_0s44i"]
+[ext_resource type="Texture2D" uid="uid://dc4xomd7g1ryb" path="res://Assets/Decoration/small_tree.png" id="8_13vq8"]
+[ext_resource type="PackedScene" uid="uid://bkkjw2co0f6nl" path="res://Scenes/Objects/Clock/clock.tscn" id="9_i4hkl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7acu"]
+texture = ExtResource("1_oua2g")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5v1tr"]
+texture = ExtResource("2_6dwgt")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0fj1v"]
+texture = ExtResource("3_v1er6")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikia7"]
+texture = ExtResource("4_uiop7")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5v1tr"]
+sources/0 = SubResource("TileSetAtlasSource_k7acu")
+sources/1 = SubResource("TileSetAtlasSource_5v1tr")
+sources/2 = SubResource("TileSetAtlasSource_0fj1v")
+sources/3 = SubResource("TileSetAtlasSource_ikia7")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5t2i"]
+texture = ExtResource("5_qqob4")
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0ngr"]
+texture = ExtResource("6_c31k2")
+1:1/0 = 0
+2:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kn0ld"]
+texture = ExtResource("7_0s44i")
+1:1/0 = 0
+2:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hgpy0"]
+texture = ExtResource("8_13vq8")
+1:1/0 = 0
+2:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ih278"]
+sources/0 = SubResource("TileSetAtlasSource_c5t2i")
+sources/1 = SubResource("TileSetAtlasSource_e0ngr")
+sources/2 = SubResource("TileSetAtlasSource_kn0ld")
+sources/3 = SubResource("TileSetAtlasSource_hgpy0")
+
+[node name="MenuBackground" type="Node2D" unique_id=1719440579]
+
+[node name="Tiles" type="Node2D" parent="." unique_id=1307264675]
+
+[node name="Roads" type="TileMapLayer" parent="Tiles" unique_id=780111289]
+texture_filter = 1
+tile_set = SubResource("TileSet_5v1tr")
+
+[node name="Decoration" type="TileMapLayer" parent="Tiles" unique_id=250114161]
+texture_filter = 1
+tile_set = SubResource("TileSet_ih278")
+
+[node name="PlayerManager" type="Node2D" parent="." unique_id=596113044]
+
+[node name="Clock" parent="." unique_id=436101982 instance=ExtResource("9_i4hkl")]
+visible = false
+time_start = 600
+time_ends = 1320
