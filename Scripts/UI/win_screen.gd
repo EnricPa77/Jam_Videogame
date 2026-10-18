@@ -4,6 +4,7 @@ const MAIN_MENU := "res://Scenes/UI/main_menu.tscn"
 
 @onready var exit_to_menu_button: Button = %ExitToMenu
 @onready var exit_button: Button = %Exit
+@onready var audio_win: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	exit_to_menu_button.pressed.connect(_on_exit_to_menu_pressed)
