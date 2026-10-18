@@ -4,8 +4,9 @@ extends CanvasLayer
 static var seen := false # persiste mientras el juego esté abierto, aunque se recargue el nivel
 
 const PAGES := [
-	{"title": "RADIO TOWERS", "text": "Select two radio towers before pressing START. They calm down cars stopped at traffic lights."},
+	{"title": "RAGE", "text": "Be careful, when cars are stopped at a traffic light for too long, they get angry and will end up running the light."},
 	{"title": "TRAFFIC LIGHTS", "text": "Click a light to stop or release the traffic. Use the red and green buttons to change all of them."},
+	{"title": "RADIO TOWERS", "text": "Select two radio towers before pressing START. They calm down cars stopped at traffic lights."},
 	{"title": "THE CLOCK", "text": "Survive until 22:00 and clear the roads to win. You’ve also got a progress bar!"},
 	{"title": "CRASHES", "text": "Two cars crash and you are out. Good luck!"},
 ]
