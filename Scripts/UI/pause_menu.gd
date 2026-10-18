@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 const MAIN_MENU := "res://Scenes/UI/main_menu.tscn" 
+const OPTIONS := preload("res://Scenes/UI/options_menu.tscn")
 
 @onready var continue_button = $PanelContainer/Border/Background/MarginContainer/MarginContainer/VBoxContainer/Continue
 @onready var options_button = $PanelContainer/Border/Background/MarginContainer/MarginContainer/VBoxContainer/Options
@@ -36,7 +37,10 @@ func resume() -> void:
 	visible = false
 
 func _on_options_pressed() -> void:
-	pass # aquí abrirás las opciones
+	var options := OPTIONS.instantiate()
+	$PanelContainer.hide()
+	options.closed.connect($PanelContainer.show)
+	add_child(options)
 
 func _on_exit_to_menu_pressed() -> void:
 	get_tree().paused = false

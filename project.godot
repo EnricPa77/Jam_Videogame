@@ -13,13 +13,17 @@ config_version=5
 config/name="ProyectoJam"
 run/main_scene="uid://cxbpcubsgngd8"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://cqd66cwlaxgs5"
+
+[autoload]
+
+Settings="*uid://dmq858cbtwgf0"
 
 [display]
 
-window/size/mode=3
-window/size/window_width_override=1920
-window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 
 [input]
