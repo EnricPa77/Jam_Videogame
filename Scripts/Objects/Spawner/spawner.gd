@@ -18,7 +18,6 @@ enum SpawnPosition {
 	RIGHT
 }
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var world: Node2D = get_tree().root.find_child("World", true, false) as Node2D
 	

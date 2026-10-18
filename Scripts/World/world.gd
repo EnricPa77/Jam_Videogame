@@ -3,6 +3,7 @@ class_name World extends Node2D
 @onready var clock: Clock = get_node_or_null("Clock")
 
 var cars: int
+var towers_selecteds: int
 var win_screen: WinScreen
 var lose_screen: LoseScreen
 
@@ -21,3 +22,8 @@ func lost():
 	await get_tree().create_timer(2.0, true).timeout
 	lose_screen = LOSE_SCREEN.instantiate() as LoseScreen
 	add_child(lose_screen)
+	
+func update_towers():
+	var radio_waves = find_children("*", "RadioWave", true, false)
+	for wave in radio_waves:
+		wave.game_started = true

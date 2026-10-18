@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://c5niympgqat4" path="res://Assets/UI/hollow_light.png" id="18_0pcbe"]
 [ext_resource type="Texture2D" uid="uid://b4foa782j8svo" path="res://Assets/UI/red_light.png" id="18_axeuq"]
 [ext_resource type="PackedScene" uid="uid://dut415phpp540" path="res://Scenes/UI/pause_menu.tscn" id="18_dt0r1"]
+[ext_resource type="PackedScene" uid="uid://dxvsa2wobjdr5" path="res://Scenes/Objects/RadioWaves/radio_wave.tscn" id="18_qebug"]
 [ext_resource type="ButtonGroup" uid="uid://lme5n7e3w7w4" path="res://Groups/lighs_group.tres" id="18_yq1aw"]
 [ext_resource type="StyleBox" uid="uid://d34fued8qewkl" path="res://Styles/border_style.tres" id="19_hmc15"]
 [ext_resource type="Texture2D" uid="uid://5clw3sh5fvqd" path="res://Assets/UI/green_light.png" id="20_1cojt"]
@@ -615,6 +616,21 @@ position = Vector2(445, 381)
 [node name="Crosswalk3" parent="Crosswalks" unique_id=1084105839 instance=ExtResource("16_hgpy0")]
 position = Vector2(737, 251)
 rotation = 1.5707964
+
+[node name="RadioWaves" type="Node2D" parent="." unique_id=1811029905]
+
+[node name="RadioWave" parent="RadioWaves" unique_id=1313023075 instance=ExtResource("18_qebug")]
+position = Vector2(283, 364)
+
+[node name="RadioWave2" parent="RadioWaves" unique_id=1740431764 instance=ExtResource("18_qebug")]
+position = Vector2(680, 436)
+wave_color = Color(0.8392157, 0.9411765, 0, 0.039215688)
+
+[node name="RadioWave3" parent="RadioWaves" unique_id=1460461967 instance=ExtResource("18_qebug")]
+position = Vector2(278, 213)
+
+[node name="RadioWave4" parent="RadioWaves" unique_id=1895947310 instance=ExtResource("18_qebug")]
+position = Vector2(683, 138)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1299937296 node_paths=PackedStringArray("level_clock")]
 process_mode = 3

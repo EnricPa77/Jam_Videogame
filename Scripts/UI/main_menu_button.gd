@@ -6,6 +6,8 @@ extends Button
 const BG := Color("141418")
 const BORDER_IDLE := Color("34363E")
 
+@onready var world: World = get_tree().root.find_child("World", true, false) as World
+
 func _ready() -> void:
 	var idle := _make_style(BORDER_IDLE, false)
 	var active := _make_style(glow_color, true)
@@ -33,3 +35,5 @@ func _on_pressed():
 		return
 	get_tree().paused = false
 	visible = false
+	if world != null:
+		world.update_towers()
