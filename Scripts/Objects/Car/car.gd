@@ -40,9 +40,9 @@ func _process(delta: float) -> void:
 func update_angryness(delta: float) -> void:
 	if stopped:
 		if calmness:
-			anger = minf(anger + delta * anger_speed_increase / 2, MAX_ANGER)
+			anger = minf(anger + delta * anger_speed_increase / 3, MAX_ANGER)
 
-			speed = minf(speed + (anger_speed_car * delta) / 2,anger_max_speed)
+			speed = minf(speed + (anger_speed_car * delta) / 3,anger_max_speed)
 		else:
 			anger = minf(anger + delta * anger_speed_increase, MAX_ANGER)
 

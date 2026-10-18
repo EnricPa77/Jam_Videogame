@@ -4,7 +4,7 @@ class_name World extends Node2D
 
 var cars: int
 var towers_selecteds: int
-var win_screen: WinScreen
+@onready var win_screen = $WinScreen
 var lose_screen: LoseScreen
 
 const WIN_SCREEN = preload("res://Scenes/UI/win_screen.tscn")
@@ -15,8 +15,7 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if (clock.current_time >= clock.time_ends) and (cars == 0):
-		win_screen = WIN_SCREEN.instantiate() as WinScreen
-		add_child(win_screen)
+		win_screen.visible = true
 
 func lost():
 	await get_tree().create_timer(2.0, true).timeout

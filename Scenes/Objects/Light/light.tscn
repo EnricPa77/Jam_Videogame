@@ -10,7 +10,7 @@ size = Vector2(6.8148155, 9.777778)
 [node name="Light" type="Node2D" unique_id=738770112]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_wh1uv")
-light_cooldown = 1.0
+light_cooldown = 0.1
 tex_red = ExtResource("2_lnigu")
 tex_green = ExtResource("3_ewek3")
 
