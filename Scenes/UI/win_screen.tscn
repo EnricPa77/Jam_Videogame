@@ -126,5 +126,4 @@ text = "EXIT"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=329649069]
 stream = ExtResource("4_g7hbh")
-volume_db = -16.0
 bus = &"SFX"
