@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ji0fhtcb7b47" path="res://Scripts/Objects/RadioWaves/radio_wave.gd" id="1_37aj7"]
 [ext_resource type="Script" uid="uid://dwryt07bh4sfq" path="res://Scripts/Objects/RadioWaves/calm_wave.gd" id="2_dkem5"]
-[ext_resource type="Texture2D" uid="uid://d3krtnq5b03au" path="res://Assets/RadioTower/radio_tower.png" id="3_o2pd0"]
+[ext_resource type="Texture2D" uid="uid://cobqw30nd7j3v" path="res://Assets/RadioTower/radio_tower_off.png" id="2_nq6ha"]
+[ext_resource type="Texture2D" uid="uid://dg4s7rwvcmfro" path="res://Assets/RadioTower/radio_tower_on.png" id="3_rlww7"]
 [ext_resource type="Script" uid="uid://cyonvqsw70wup" path="res://Scripts/Objects/RadioWaves/radio_hitbox.gd" id="4_8366f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i7hxs"]
@@ -13,6 +14,8 @@ radius = 17.029387
 [node name="RadioWave" type="Node2D" unique_id=1313023075]
 process_mode = 3
 script = ExtResource("1_37aj7")
+tex_off = ExtResource("2_nq6ha")
+tex_on = ExtResource("3_rlww7")
 
 [node name="CalmWave" type="Area2D" parent="." unique_id=1408188863]
 process_mode = 3
@@ -24,7 +27,7 @@ shape = SubResource("CircleShape2D_i7hxs")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=985956968]
 texture_filter = 1
 position = Vector2(2, 2)
-texture = ExtResource("3_o2pd0")
+texture = ExtResource("2_nq6ha")
 
 [node name="RadioHitbox" type="Area2D" parent="." unique_id=739496681]
 process_mode = 3

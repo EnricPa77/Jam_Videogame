@@ -3,12 +3,17 @@ class_name World extends Node2D
 @onready var clock: Clock = get_node_or_null("Clock")
 
 var cars: int
-var towers_selecteds: int
+var towers_selected := 0:
+	set(value):
+		towers_selected = value
+		towers_selected_changed.emit(towers_selected)
 @onready var win_screen = $WinScreen
 var lose_screen: LoseScreen
 
 const WIN_SCREEN = preload("res://Scenes/UI/win_screen.tscn")
 const LOSE_SCREEN = preload("res://Scenes/UI/lose_screen.tscn")
+
+signal towers_selected_changed(count: int)
 
 func _ready():
 	get_tree().paused = true
