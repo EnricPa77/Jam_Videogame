@@ -8,13 +8,16 @@ var lose_screen: LoseScreen
 
 
 var cars: int
-var towers_selecteds: int
+var towers_selected := 0:
+	set(value):
+		towers_selected = value
+		towers_selected_changed.emit(towers_selected)
 var win_handled: bool
-
-
 
 const WIN_SCREEN = preload("res://Scenes/UI/win_screen.tscn")
 const LOSE_SCREEN = preload("res://Scenes/UI/lose_screen.tscn")
+
+signal towers_selected_changed(count: int)
 
 func _ready():
 	get_tree().paused = true

@@ -174,15 +174,19 @@ theme_override_constants/separation = 16
 
 [node name="PlayButton" parent="Menu/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1937142157 instance=ExtResource("2_o14dv")]
 layout_mode = 2
+glow_color = null
+run_default_action = null
 
 [node name="OptionsButton" parent="Menu/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1967438297 instance=ExtResource("2_o14dv")]
 layout_mode = 2
 text = "OPTIONS"
 glow_color = Color(1, 0.6039216, 0.18039216, 1)
+run_default_action = null
 
 [node name="ExitButton" parent="Menu/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1482358260 instance=ExtResource("2_o14dv")]
 layout_mode = 2
 text = "EXIT"
 glow_color = Color(0.8392157, 0.1882353, 0.1882353, 1)
+run_default_action = null
 
 [editable path="World"]
