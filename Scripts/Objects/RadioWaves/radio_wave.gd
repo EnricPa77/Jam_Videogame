@@ -1,16 +1,22 @@
 class_name RadioWave extends Node2D
 
 @onready var world: World = get_tree().root.find_child("World", true, false) as World
+@onready var sprite: Sprite2D = $Sprite2D
 
 @export var max_radius: float = 200.0
 @export var wave_speed: float = 100.0
 @export var wave_color: Color = Color(0.0, 1.0, 1.0, 0.05)
 @export var tower_cooldown: float
+@export var tex_off: Texture2D
+@export var tex_on: Texture2D
 
 var radius: float = 0.0
 var calm_wave: Calm_Wave
 var game_started: bool
 var selected: bool
+
+func _ready() -> void:
+	_refresh_visual()
 
 func _process(delta: float) -> void:
 	if selected:
@@ -41,14 +47,18 @@ func _on_calm_wave_area_exited(area: Area2D) -> void:
 			car.calmness = false
 
 func _on_radio_hitbox_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event.is_action_pressed("click") and not game_started and world.towers_selecteds < 2:
+	if event.is_action_pressed("click") and not game_started:
 		if selected:
 			selected = false
-			world.towers_selecteds -= 1 
+			world.towers_selected -= 1
 			radius = 0.0
 			queue_redraw()
-			print(world.towers_selecteds)
-		else:
+			print(world.towers_selected)
+		elif world.towers_selected < 2:
 			selected = true
-			world.towers_selecteds += 1 
-			print(world.towers_selecteds)
+			world.towers_selected += 1
+			print(world.towers_selected)
+		_refresh_visual()
+
+func _refresh_visual() -> void:
+	sprite.texture = tex_on if selected else tex_off

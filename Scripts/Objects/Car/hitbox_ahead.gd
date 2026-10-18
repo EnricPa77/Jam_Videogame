@@ -14,11 +14,9 @@ func _physics_process(delta: float) -> void:
 				continue
 
 			if other_car.rotation == car.rotation:
-				if other_car.stopped:
+				if other_car.stopped or other_car.speed < car.speed:
 					must_stop = true
 					break
-				if other_car.speed < car.speed:
-					car.speed = other_car.speed
 	if must_stop:
 		car.stop()
 	else:
