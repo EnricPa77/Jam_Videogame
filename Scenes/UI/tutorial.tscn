@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://dmap1o7oqp2q6"]
+
+[ext_resource type="Script" uid="uid://dp3npmoso33or" path="res://Scripts/UI/tutorial.gd" id="1_wvmhp"]
+[ext_resource type="StyleBox" uid="uid://d34fued8qewkl" path="res://Styles/border_style.tres" id="2_sb71i"]
+[ext_resource type="StyleBox" uid="uid://dpo3qj04pd8yv" path="res://Styles/HUD_style.tres" id="3_5avan"]
+[ext_resource type="FontFile" uid="uid://153c7ihbwso" path="res://Assets/Fonts/Silkscreen-Bold.ttf" id="4_jfyr4"]
+[ext_resource type="FontFile" uid="uid://bsdc17hdfbtsd" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="5_sb71i"]
+
+[node name="Tutorial" type="CanvasLayer" unique_id=1452354423]
+process_mode = 3
+script = ExtResource("1_wvmhp")
+
+[node name="Shade" type="ColorRect" parent="." unique_id=554663067]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="PanelContainer" type="CenterContainer" parent="." unique_id=2137769791]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Border" type="PanelContainer" parent="PanelContainer" unique_id=2144069882]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_sb71i")
+
+[node name="Background" type="PanelContainer" parent="PanelContainer/Border" unique_id=1914979630]
+custom_minimum_size = Vector2(380, 300)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_5avan")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Border/Background" unique_id=54063589]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 26
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/Border/Background/MarginContainer" unique_id=1058347077]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="PanelContainer/Border/Background/MarginContainer/VBoxContainer" unique_id=967294711]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("4_jfyr4")
+theme_override_font_sizes/font_size = 50
+text = "TUTORIAL"
+horizontal_alignment = 1
+
+[node name="Body" type="Label" parent="PanelContainer/Border/Background/MarginContainer/VBoxContainer" unique_id=115455413]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_sb71i")
+theme_override_styles/normal = ExtResource("2_sb71i")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Page" type="Label" parent="PanelContainer/Border/Background/MarginContainer/VBoxContainer" unique_id=1225897221]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_jfyr4")
+text = "1/4"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Border/Background/MarginContainer/VBoxContainer" unique_id=39200195]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Skip" type="Button" parent="PanelContainer/Border/Background/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1623224216]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_jfyr4")
+text = "SKIP"
+
+[node name="Back" type="Button" parent="PanelContainer/Border/Background/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2017207466]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_jfyr4")
+text = "BACK"
+
+[node name="Next" type="Button" parent="PanelContainer/Border/Background/MarginContainer/VBoxContainer/HBoxContainer" unique_id=464100320]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_jfyr4")
+text = "NEXT"
