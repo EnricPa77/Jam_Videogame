@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const MAIN_MENU := "res://Scenes/UI/main_menu.tscn" # ajusta la ruta
+const MAIN_MENU := "res://Scenes/UI/main_menu.tscn" 
 
 @onready var continue_button = $PanelContainer/Border/Background/MarginContainer/MarginContainer/VBoxContainer/Continue
 @onready var options_button = $PanelContainer/Border/Background/MarginContainer/MarginContainer/VBoxContainer/Options
@@ -27,12 +27,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	get_viewport().set_input_as_handled()
 
 func pause() -> void:
-	_was_paused = get_tree().paused # recuerda si ya estaba pausado (antes del START)
+	_was_paused = get_tree().paused
 	get_tree().paused = true
 	visible = true
 
 func resume() -> void:
-	get_tree().paused = _was_paused # vuelve al estado anterior
+	get_tree().paused = _was_paused
 	visible = false
 
 func _on_options_pressed() -> void:
@@ -40,7 +40,7 @@ func _on_options_pressed() -> void:
 
 func _on_exit_to_menu_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file(MAIN_MENU) # o change_scene_to_file(MAIN_MENU), según el caso
+	get_tree().change_scene_to_file(MAIN_MENU)
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

@@ -6,7 +6,6 @@ class_name LoseScreen extends CanvasLayer
 func _ready() -> void:
 	retry_button.pressed.connect(_on_retry_pressed)
 
-	# Solo para probar la escena sola con F6
 	if get_tree().current_scene == self:
 		visible = true
 

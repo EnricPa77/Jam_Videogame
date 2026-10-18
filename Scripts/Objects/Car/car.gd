@@ -23,6 +23,7 @@ const MAX_ANGER: float = 100
 var anger: float = 0
 var calmness: bool = false
 var stopped: bool
+var stopped_by_light: bool
 var berserk: bool
 
 func _ready() -> void:
@@ -34,35 +35,21 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not stopped:
 		position += direction * speed * delta
-	#print("Furia: ", anger , "Velocidad: ", speed, "Parado: ", stopped)
 	update_angryness(delta)
 
 func update_angryness(delta: float) -> void:
 	if stopped:
-		anger = minf(
-			anger + delta * anger_speed_increase,
-			MAX_ANGER
-		)
+		if calmness:
+			anger = minf(anger + delta * anger_speed_increase / 2, MAX_ANGER)
 
-		speed = minf(
-			speed + (anger_speed_car * delta),
-			anger_max_speed
-		)
+			speed = minf(speed + (anger_speed_car * delta) / 2,anger_max_speed)
+		else:
+			anger = minf(anger + delta * anger_speed_increase, MAX_ANGER)
+
+			speed = minf(speed + (anger_speed_car * delta),anger_max_speed)
 		
 		if anger == MAX_ANGER:
-			stopped = false
 			berserk = true
-
-	elif not berserk and calmness:
-		anger = maxf(
-			anger - delta * anger_speed_decrease,
-			0.0
-		)
-
-		speed = maxf(
-			speed - (anger_speed_car * delta),
-			original_speed
-		)
 
 	var target_color: Color = Color(1.0, 1.0 - anger/100, 1.0 - anger/100)
 	polygon.color = target_color

@@ -5,17 +5,21 @@ extends Area2D
 
 @onready var color_rect: ColorRect = $ColorRect
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var stop: bool = get_parent().get_stop()
 	var areas = get_overlapping_areas()
-	for area in areas:
-		if not (area is HitboxCheckerCar):
-			if area.get_parent() is Car:
-				var car: Car = area.get_parent()
-				if (stop and not car.berserk):
-					car.stop()
-				else:
-					car.go()
+	
+	for area in get_overlapping_areas():
+		if area is HitboxCheckerCar:
+			continue
+
+		if area.get_parent() is Car:
+			var car: Car = area.get_parent()
+
+			if car.berserk:
+				car.stopped_by_light = false
+			else:
+				car.stopped_by_light = stop
 
 func update_color(stop: bool) -> void:
 	var c := color_red if stop else color_green
