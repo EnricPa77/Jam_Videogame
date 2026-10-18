@@ -13,10 +13,12 @@ class_name Car extends Node2D
 ##Mide a que dirección tiene que ir el coche
 @export var direction: Vector2
 
+@onready var world: Node2D = get_tree().root.find_child("World", true, false) as Node2D
+@onready var car_crash_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var polygon: Polygon2D = $Polygon2D
 @onready var original_speed: float = speed
 @onready var camera: Camera
-@onready var world: Node2D = get_tree().root.find_child("World", true, false) as Node2D
+
 
 const MAX_ANGER: float = 100
 
@@ -57,6 +59,7 @@ func update_angryness(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is HitboxCar:
+		car_crash_sound.play()
 		camera.sum_impacts(self.global_position, area.global_position)
 		camera.move_to_collision()
 
