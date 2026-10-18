@@ -41,14 +41,14 @@ func _on_calm_wave_area_exited(area: Area2D) -> void:
 			car.calmness = false
 
 func _on_radio_hitbox_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event.is_action_pressed("click") and not game_started and world.towers_selecteds < 2:
+	if event.is_action_pressed("click") and not game_started:
 		if selected:
 			selected = false
 			world.towers_selecteds -= 1 
 			radius = 0.0
 			queue_redraw()
 			print(world.towers_selecteds)
-		else:
+		elif world.towers_selecteds < 2:
 			selected = true
 			world.towers_selecteds += 1 
 			print(world.towers_selecteds)
