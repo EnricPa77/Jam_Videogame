@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://daepo5igj4tna"
-path="res://.godot/imported/118655__pyzaist__yay.wav-10aaf146aa29a24981ef7032cd0ac849.sample"
+path="res://.godot/imported/win_sfx.wav-e52d9dd08e46f20bc296b9695a745d0c.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/SFX/118655__pyzaist__yay.wav"
-dest_files=["res://.godot/imported/118655__pyzaist__yay.wav-10aaf146aa29a24981ef7032cd0ac849.sample"]
+source_file="res://Assets/Audio/SFX/win_sfx.wav"
+dest_files=["res://.godot/imported/win_sfx.wav-e52d9dd08e46f20bc296b9695a745d0c.sample"]
 
 [params]
 

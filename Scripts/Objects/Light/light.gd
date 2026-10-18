@@ -2,7 +2,7 @@ class_name Light extends Node2D
 
 @export var light_cooldown: float
 @onready var timer: Timer = $Timer
-
+@onready var light_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @export var tex_red: Texture2D
 @export var tex_green: Texture2D
 @onready var sprite: Sprite2D = $Sprite2D
@@ -22,6 +22,7 @@ func _ready() -> void:
 
 func _on_light_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("click") and (cooldown_ready):
+		light_sound.play()
 		change_color()
 
 func change_color() -> void:

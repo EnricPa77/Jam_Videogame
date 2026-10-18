@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://csihtaqt5g84w" path="res://Scripts/UI/win_screen.gd" id="1_bsq8g"]
 [ext_resource type="StyleBox" uid="uid://dpo3qj04pd8yv" path="res://Styles/HUD_style.tres" id="3_3ykf0"]
 [ext_resource type="FontFile" uid="uid://153c7ihbwso" path="res://Assets/Fonts/Silkscreen-Bold.ttf" id="4_3283q"]
-[ext_resource type="AudioStream" uid="uid://daepo5igj4tna" path="res://Assets/Audio/SFX/118655__pyzaist__yay.wav" id="4_g7hbh"]
+[ext_resource type="AudioStream" uid="uid://daepo5igj4tna" path="res://Assets/Audio/SFX/win_sfx.wav" id="4_g7hbh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5iyp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

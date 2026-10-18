@@ -21,6 +21,8 @@ buses/default_bus_layout="uid://cqd66cwlaxgs5"
 [autoload]
 
 Settings="*uid://dmq858cbtwgf0"
+UISounds="*uid://dx07648rscghi"
+MusicPlayer="*uid://bk2kxt8gkrppa"
 
 [display]
 
