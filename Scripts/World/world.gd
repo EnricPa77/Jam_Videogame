@@ -12,8 +12,6 @@ var towers_selected := 0:
 	set(value):
 		towers_selected = value
 		towers_selected_changed.emit(towers_selected)
-@onready var win_screen = $WinScreen
-var lose_screen: LoseScreen
 var win_handled: bool
 
 const WIN_SCREEN = preload("res://Scenes/UI/win_screen.tscn")
