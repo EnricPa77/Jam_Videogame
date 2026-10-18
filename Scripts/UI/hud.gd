@@ -12,6 +12,7 @@ extends CanvasLayer
 @onready var towers_group: Control = %TowersGroup
 @onready var towers_count: Label = %TowersCount
 @onready var start_button: Control = %Start
+@onready var time_bar: ProgressBar = %TimeBar
 
 func _ready() -> void:
 	var group := ButtonGroup.new()
@@ -25,6 +26,8 @@ func _ready() -> void:
 	
 	if level_clock:
 		level_clock.time_changed.connect(_on_time_changed)
+		time_bar.min_value = level_clock.hour * 60 + level_clock.minutes
+		time_bar.max_value = level_clock.time_ends
 		_on_time_changed(level_clock.hour, level_clock.minutes)
 	_on_red_pressed.call_deferred()
 	var world := get_parent() as World
@@ -37,6 +40,7 @@ func _ready() -> void:
 
 func _on_time_changed(hour: int, minutes: int) -> void:
 	clock_value.text = "%02d:%02d" % [hour, minutes]
+	create_tween().tween_property(time_bar, "value", hour * 60 + minutes, 0.25)
 
 func _on_red_pressed() -> void:
 	get_tree().call_group("traffic_lights", "set_stop", true)

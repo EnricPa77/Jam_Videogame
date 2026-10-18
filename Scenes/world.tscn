@@ -529,6 +529,17 @@ corner_radius_bottom_left = 4
 shadow_size = 1
 shadow_offset = Vector2(2, 2)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ih278"]
+bg_color = Color(0.078431375, 0.078431375, 0.09411765, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.20392157, 0.21176471, 0.24313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omhtt"]
+bg_color = Color(0.23529412, 0.78431374, 0.3529412, 1)
+
 [node name="World" type="Node2D" unique_id=1719440579]
 script = ExtResource("1_xbk3s")
 
@@ -669,7 +680,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD/Border/Background/MarginContainer" unique_id=1788748599]
 layout_mode = 2
-theme_override_constants/separation = 36
+theme_override_constants/separation = 30
 
 [node name="Round" type="Label" parent="HUD/Border/Background/MarginContainer/VBoxContainer" unique_id=933798916]
 layout_mode = 2
@@ -702,6 +713,15 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_t2t4p")
 text = "00:00"
 horizontal_alignment = 1
+
+[node name="TimeBar" type="ProgressBar" parent="HUD/Border/Background/MarginContainer/VBoxContainer/ClockGroup" unique_id=2049941383]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ih278")
+theme_override_styles/fill = SubResource("StyleBoxFlat_omhtt")
+step = 0.0
+show_percentage = false
 
 [node name="TowersGroup" type="VBoxContainer" parent="HUD/Border/Background/MarginContainer/VBoxContainer" unique_id=1378722845]
 unique_name_in_owner = true
